@@ -2,9 +2,8 @@
   "name": "app",
   "version": "1.0.0",
   "description": "conference management system",
-  "main": "index.js",
+  "main": "App.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html"
   },
   "repository": {
