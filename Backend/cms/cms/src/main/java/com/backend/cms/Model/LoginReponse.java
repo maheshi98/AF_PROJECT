@@ -1,22 +1,17 @@
 package com.backend.cms.Model;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-import org.springframework.data.annotation.Id;
-@Document(collection = "user")
-public class User {
+import java.lang.reflect.Type;
+import java.util.List;
 
-    @Id
+public class LoginReponse {
     private String id;
     private String email;
     private String username;
-    private String password;
     private String firstname;
     private String lastname;
     private boolean status;
-    private String roleId;
-
+    private Role role;
+    private List<Type> types;
 
     public String getId() {
         return id;
@@ -42,13 +37,6 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public String getFirstname() {
         return firstname;
@@ -74,11 +62,21 @@ public class User {
         this.status = status;
     }
 
-    public String getRoleId() {
-        return roleId;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRoleId(String roleId) {
-        this.roleId = roleId;
+    public void setRole(Role role) {
+        this.role = role;
     }
+
+    public List<Type> getTypes() {
+        return types;
+    }
+
+    public void setTypes(List<Type> types) {
+        this.types = types;
+    }
+
+
 }
