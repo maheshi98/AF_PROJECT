@@ -9,10 +9,11 @@ import com.backend.cms.Repository.TypeRepo;
 import com.backend.cms.Repository.UserRepository;
 import com.backend.cms.Service.sampleServ;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
+@RestController
+@RequestMapping("/users")
 public class RoleController {
 
     @Autowired
