@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import HomePage from './Components/Home';
+import HomePage from './Components/Home/Home';
+import NavBar from './Components/NavBar/NavBar';
+import Footer from './Components/Footer/Footer';
 
 export default class App extends Component {
     constructor(props) {
@@ -19,17 +21,13 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <div>
-                    <BrowserRouter>
-                        <Switch>
-                            <Route exact path='/' component={HomePage} />
-                        </Switch>
-                    </BrowserRouter>
-                </div>
-                <br />
-                <div>
-                    <footer> <hr /> <h1>@Copyright© 2020</h1> </footer>
-                </div>
+                <NavBar />
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path='/' component={HomePage} />
+                    </Switch>
+                </BrowserRouter>
+                <Footer />
             </div>
         )
     }
