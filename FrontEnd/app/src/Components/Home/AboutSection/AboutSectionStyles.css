@@ -1,0 +1,17 @@
+.mainContainer{
+    padding: 0.5%;
+    align-content: center;
+    background-color: rgb(200, 225, 248);
+}
+.mainContainer h1{
+    text-align: left;
+    padding-left: 2%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.mainContainer p{
+    padding: 20px;
+    text-align: justify;
+    padding-top: 10px;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+}
