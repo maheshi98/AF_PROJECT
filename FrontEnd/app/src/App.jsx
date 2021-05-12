@@ -18,6 +18,7 @@ export default class App extends Component {
     handleEvent() { }
     // Class Properties (Stage 3 Proposal)
     // handler = () => { this.setState() }
+    
     render() {
         return (
             <div>
