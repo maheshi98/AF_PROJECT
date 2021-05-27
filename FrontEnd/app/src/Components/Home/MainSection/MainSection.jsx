@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 import './MainSectionStyles.css';
 
 export default class MainSection extends Component {
@@ -35,9 +36,10 @@ export default class MainSection extends Component {
                     <div class="venue style_3">Sri Lanka Institute of Information Technology, Sri Lanka</div>
                 </div>
                 <div class="button style">
-                    <button class="register">Register Now</button>
-                    <button class="login">Log In</button>
+                <Link to='/register'> <button class="register"  href="login" >Register Now</button></Link>
+                <Link to='/login'>   <button class="login" >Log In</button></Link>
                 </div>
+                
             </div>
         );
     }
