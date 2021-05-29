@@ -7,7 +7,6 @@ import './HomeStyles.css';
 
 export default class Home extends Component {
     render() {
-        //let btn_class = "textColor";
         return (
             <div>
                 <MainSection />

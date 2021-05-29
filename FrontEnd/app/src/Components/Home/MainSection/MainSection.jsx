@@ -3,6 +3,7 @@ import { CardGroup, Card, Button } from 'react-bootstrap';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { MdPlace } from 'react-icons/md';
 import logo from 'url:~/src/Assets/back.jpg';
+import { Link } from 'react-router-dom'
 import './MainSectionStyles.css';
 
 export default class MainSection extends Component {
@@ -27,9 +28,9 @@ export default class MainSection extends Component {
                         <Card.Title style={{ fontSize: 70, fontWeight: 'bolder', textAlign: 'center', fontFamily: 'serif' }}>CONFERENCE</Card.Title>
                         <Card.Text style={{ paddingTop: 70, fontSize: 25, textAlign: 'center' }}><FaCalendarAlt size={35} /> 28-12 December</Card.Text>
                         <Card.Text style={{ paddingTop: 10, fontSize: 25, textAlign: 'center' }}><MdPlace size={35} /> Sri Lanka Institute of Information Technology</Card.Text>
-                        <Card.Text style={{ paddingTop: 30, fontSize: 25, textAlign: 'center'}}>
-                            <Button style={{ fontSize: 20, width: 150, paddingRight: 10 }} variant="secondary">Log In</Button>{' '}
-                            <Button style={{ fontSize: 20, width: 150 }} variant="secondary">Sign Up</Button>
+                        <Card.Text style={{ paddingTop: 30, fontSize: 25, textAlign: 'center' }}>
+                            <Link to='/login'> <Button style={{ fontSize: 20, width: 150, paddingRight: 10 }} variant="secondary">Log In</Button>{' '}</Link>
+                            <Link to='/register'><Button style={{ fontSize: 20, width: 150 }} variant="secondary">Sign Up</Button></Link>
                         </Card.Text>
                     </Card.ImgOverlay>
                 </Card>
