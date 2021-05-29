@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MainSection from './MainSection/MainSection';
 import AboutSection from './AboutSection/AboutSection';
 import PaperTopicsSection from './PaperTopicsSection/PaperTopics';
+import MapSection from './MapSection/Map';
 import './HomeStyles.css';
 
 export default class Home extends Component {
@@ -12,6 +13,7 @@ export default class Home extends Component {
                 <MainSection />
                 <AboutSection />
                 <PaperTopicsSection />
+                <MapSection />
             </div>
         )
     }
