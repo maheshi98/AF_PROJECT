@@ -11,6 +11,15 @@ export default class App extends Component {
         super(props)
         this.state = {}
     }
+
+
+    componentDidMount() { }
+    componentDidUpdate(prevProps, prevState, snapshot) { if (prevState.name !== this.state.name) { this.handler() } }
+    componentWillUnmount() { }
+    // Prototype methods, Bind in Constructor (ES2015)
+    handleEvent() { }
+    // Class Properties (Stage 3 Proposal)
+    // handler = () => { this.setState() }
     
     render() {
         return (
