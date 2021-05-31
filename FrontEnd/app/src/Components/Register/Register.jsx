@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './Register.css';
-import 'fa-icons';
 
 export default class Register extends Component {
     constructor(props) {

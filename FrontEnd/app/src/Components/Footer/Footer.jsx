@@ -11,9 +11,6 @@ export default class Footer extends Component {
     render() {
         return (
             <div>
-                <section>
-                    <h1>Event venue</h1>
-                </section>
                 <footer className="footer-distributed">
                     <div className="footer-left">
                         <h3>" International Conference on Application Frameworks - <br />ICAF "</h3>
