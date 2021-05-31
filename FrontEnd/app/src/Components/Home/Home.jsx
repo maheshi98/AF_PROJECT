@@ -9,6 +9,7 @@ export default class Home extends Component {
         //let btn_class = "textColor";
         return (
             <div>
+                
                 <MainSection />
                 <AboutSection />
                 <PaperTopicsSection />
