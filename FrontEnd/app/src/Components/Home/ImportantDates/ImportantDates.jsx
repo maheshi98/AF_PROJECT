@@ -42,7 +42,8 @@ class ImportantDates extends Component {
                                 <div className='col-md-4'>
                                     <div className='date'>
                                         <div className='date-content'>
-                                            <p>{item.description}</p>
+                                            <h3>{item.description}</h3>
+                                            <p>Hellow world submit document here.</p>
                                             <div className='date-meta'>{item.date}</div>
                                         </div>
                                     </div>
