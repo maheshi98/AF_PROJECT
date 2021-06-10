@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'react-bootstrap';
-import logo from 'url:~/src/Assets/backNew.jpg';
-import { Link } from 'react-router-dom'
-import './MainSectionStyles.css';
+import { Link } from 'react-router-dom';
 import ImportantDateService from '../../../Services/ImportantDate';
+import logo from 'url:~/src/Assets/backNew.jpg';
+import { Card, Button } from 'react-bootstrap';
+import './MainSectionStyles.css';
 
 class MainSection extends Component {
     constructor(props) {
