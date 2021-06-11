@@ -8,6 +8,9 @@
 	padding-bottom: 15px;
     text-transform: uppercase;
 }
+.section-title p {
+color: #666;
+}
 .section-title h2::after {
 	position: absolute;
 	content: "";

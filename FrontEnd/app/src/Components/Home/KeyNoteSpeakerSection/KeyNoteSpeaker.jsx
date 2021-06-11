@@ -20,8 +20,7 @@ class KeyNoteSpeakers extends Component {
                 <div className='container'>
                     <div className='section-title text-center'>
                         <h2>Key Note Speakers</h2>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-                            dapibus leonec. </p>
+                        <p>Introducing the names speaking at Technology Conference 2021:</p>
                     </div>
                     <CardDeck>
                         <Card>
