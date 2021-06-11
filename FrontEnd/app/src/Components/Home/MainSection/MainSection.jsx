@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ImportantDateService from '../../../Services/ImportantDate';
 import logo from 'url:~/src/Assets/backNew.jpg';
+import { getImportantDateByIdFn } from '../../../BizLogic';
 import { Card, Button } from 'react-bootstrap';
 import './MainSectionStyles.css';
 
 class MainSection extends Component {
     constructor(props) {
         super(props)
-        this.getConfDate = this.getConfDate.bind(this);
-
         this.state = {
             date: {
                 date: "December 27 - 29, 2021",
@@ -19,19 +17,14 @@ class MainSection extends Component {
     }
 
     componentDidMount() {
-        this.getConfDate("60b266c2d0e5b10676a9efa7");
-    }
-
-    getConfDate(id) {
-        ImportantDateService.get(id).then(response => {
+        getImportantDateByIdFn("60b266c2d0e5b10676a9efa7").then(response => {
             this.setState({
-                date: response.data
-            });
-            console.log(response.data);
+                date: response
+            })
         })
             .catch(e => {
-                console.log(e);
-            });
+                consol.log(e);
+            })
     }
 
     render() {
