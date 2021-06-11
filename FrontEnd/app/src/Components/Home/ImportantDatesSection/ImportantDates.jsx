@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './ImportantDates.css';
-import ImportantDateService from '../../../Services/ImportantDate';
-
+import { getAllImportantDateFn } from '../../../BizLogic';
+import Error from '../../NotFound/NotFound';
 
 class ImportantDates extends Component {
     constructor(props) {
         super(props)
         this.getAllImportantDates = this.getAllImportantDates.bind(this);
-
         this.state = {
             dates: []
         }
@@ -17,16 +16,21 @@ class ImportantDates extends Component {
         this.getAllImportantDates();
     }
 
+    /**
+     * @description This method retrieve all Important Dates
+     * @memberof ImportantDates
+     */
     getAllImportantDates() {
-        ImportantDateService.getAll().then(response => {
-            this.setState({
-                dates: response.data
-            });
-            console.log(response.data);
-        })
-            .catch(e => {
-                console.log(e);
-            });
+        const callbackFn = (result) => {
+            const { data, error } = result;
+            if (data) {
+                this.setState({ dates: data });
+            }
+            if (error) {
+                console.log(error);
+            }
+        }
+        getAllImportantDateFn(callbackFn);
     }
 
     render() {
@@ -50,9 +54,7 @@ class ImportantDates extends Component {
                                 </div>
                             )
                             ) :
-                                <div>
-                                    Dates not found
-                             </div>
+                                <Error />
                         }
                     </div>
                 </div>
