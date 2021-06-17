@@ -2,16 +2,11 @@ import React, { Component } from 'react';
 import './AboutSectionStyles.css';
 import logo from 'url:~/src/Assets/new.png';
 
-export default class MainSection extends Component {
+class MainSection extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isSelected: false,
         }
-    }
-
-    componentDidMount() {
-        this.setState({ isSelected: true })
     }
 
     render() {
@@ -26,9 +21,9 @@ export default class MainSection extends Component {
                             <div className='col-xs-12 col-md-6'>
                                 <div className='about-text'>
                                     <h2>About Conference</h2>
-                                    <p>ICAF is the most excited conference held around the world. 
+                                    <p>ICAF is the most excited conference held around the world.
                                         This is the 1st time that the conference comes as a virtual
-                                        online conference which leads to participate all of interested people. 
+                                        online conference which leads to participate all of interested people.
                                         It will provide you with the answers to today’s toughest
                                         challenges, while also giving you the guidance to navigate the
                                         uncertain times ahead. You’ll find passionate, like-minded
@@ -47,3 +42,5 @@ export default class MainSection extends Component {
         );
     }
 }
+
+export default MainSection;
