@@ -91,6 +91,7 @@ export default class ViewConference extends Component {
                                     <Form.Control type="text" placeholder="Conference Description" />
                                 </Form.Group>
                                 <Form.Group>
+                                    Select Research Papers<br />
                                     <Select
                                         options={this.state.researchPapersOptions}
                                         onChange={this.onCategorySelect}
@@ -99,6 +100,7 @@ export default class ViewConference extends Component {
                                     />
                                 </Form.Group>
                                 {/* <Form.Group>
+                                 <Form.Label>Select Workshop</Form.Label>
                                     <Select
                                         options={this.state.category_options}
                                         onChange={this.onCategorySelect}

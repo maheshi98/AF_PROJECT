@@ -15,7 +15,7 @@ export default class Conference extends Component {
                             <div className='section-title text-center'>
                                 <h2>Conference Details</h2>
                                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-                            dapibus leonec. </p>
+                                    dapibus leonec. </p>
                             </div>
                             <CardDeck>
                                 <Card>
