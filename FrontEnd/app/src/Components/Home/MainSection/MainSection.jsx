@@ -11,7 +11,7 @@ class MainSection extends Component {
         this.state = {
             date: {
                 date: "December 27 - 29, 2021",
-                description: ""
+                description: "Technology"
             }
         }
     }

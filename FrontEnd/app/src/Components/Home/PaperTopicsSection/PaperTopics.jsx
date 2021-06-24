@@ -6,12 +6,7 @@ export default class MainSection extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isSelected: false,
         }
-    }
-
-    componentDidMount() {
-        this.setState({ isSelected: true })
     }
 
     render() {
@@ -42,7 +37,7 @@ export default class MainSection extends Component {
                         }
                     </div>
                 </div>
-            </div>       
+            </div>
         );
     }
 }

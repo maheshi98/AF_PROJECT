@@ -30,6 +30,7 @@ class ImportantDates extends Component {
                 console.log(error);
             }
         }
+        {/** Calling function to retrieve data */ }
         getAllImportantDateFn(callbackFn);
     }
 
@@ -42,7 +43,7 @@ class ImportantDates extends Component {
                     </div>
                     <div className='row'>
                         {
-                            this.state.dates ? this.state.dates.map((item, index) => (
+                            this.state.dates.length > 0 ? this.state.dates.map((item, index) => (
                                 <div className='col-md-4'>
                                     <div className='date'>
                                         <div className='date-content'>
@@ -54,7 +55,9 @@ class ImportantDates extends Component {
                                 </div>
                             )
                             ) :
-                                <Error />
+                                <div>
+                                    <Error />
+                                </div>
                         }
                     </div>
                 </div>
