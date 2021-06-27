@@ -3,6 +3,7 @@ package com.backend.cms.Controller;
 import com.backend.cms.Model.Role;
 import com.backend.cms.Model.RoleType;
 import com.backend.cms.Model.User;
+import com.backend.cms.Model.sampleMod;
 import com.backend.cms.Repository.Rolerepo;
 import com.backend.cms.Repository.TypeRepo;
 import com.backend.cms.Repository.UserRepository;
@@ -18,12 +19,7 @@ public class RoleController {
     @Autowired
     public Rolerepo irolerepo;
     public UserRepository iuser;
-
-    @Autowired
     public TypeRepo itype;
-
-    @Autowired
-    public sampleServ sampleServ;
 
     @RequestMapping(value = "/addRole", method = RequestMethod.POST)
     public Role test(@RequestBody Role role){
@@ -31,10 +27,9 @@ public class RoleController {
     }
 
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
-    public User saveUser(@RequestBody User user){
-        return sampleServ.saveUser(user);
+    public User test(@RequestBody User user){
+        return iuser.save(user);
     }
-
     @RequestMapping(value = "/addtype", method = RequestMethod.POST)
     public RoleType test(@RequestBody RoleType type){
         return itype.save(type);
