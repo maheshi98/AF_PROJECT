@@ -13,6 +13,17 @@ public class Conference {
     private ConferenceSession conferenceSession;
     private Boolean approveStatus;
 
+    public Conference() {
+    }
+
+    public Conference(String confId, String confTopic, String confDate, String confDescription, Boolean approveStatus) {
+        this.confId = confId;
+        this.confTopic = confTopic;
+        this.confDate = confDate;
+        this.confDescription = confDescription;
+        this.approveStatus = approveStatus;
+    }
+
     public String getConfId() {
         return confId;
     }

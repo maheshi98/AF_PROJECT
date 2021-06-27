@@ -3,6 +3,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import org.springframework.data.annotation.Id;
 @Document(collection = "user")
 public class User {
 
@@ -14,8 +15,7 @@ public class User {
     private String firstname;
     private String lastname;
     private boolean status;
-
-    private Role role;
+    private String roleId;
 
 
     public String getId() {
@@ -74,11 +74,11 @@ public class User {
         this.status = status;
     }
 
-    public Role getRole() {
-        return role;
+    public String getRoleId() {
+        return roleId;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
     }
 }

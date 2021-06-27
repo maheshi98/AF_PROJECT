@@ -5,10 +5,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Type")
 public class RoleType {
-    @Id
-    private String id;
-    private String typeName;
-
     public String getId() {
         return id;
     }
@@ -18,12 +14,14 @@ public class RoleType {
     }
 
     public String getTypeName() {
-        return typeName;
+        return TypeName;
     }
 
     public void setTypeName(String typeName) {
-        this.typeName = typeName;
+        TypeName = typeName;
     }
 
-
+    @Id
+    private String id;
+    private String TypeName;
 }
