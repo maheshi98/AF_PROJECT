@@ -3,13 +3,16 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HomePage from './Components/Home/Home';
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer';
+import Login from './Components/Login/Login';
+import Register from './Components/Register/Register';
+import UploadResearch from './Components/Research/UploadResearch';
 
 export default class App extends Component {
     constructor(props) {
         super(props)
         this.state = {}
-        this.handleEvent = this.handleEvent.bind(this)
     }
+
 
     componentDidMount() { }
     componentDidUpdate(prevProps, prevState, snapshot) { if (prevState.name !== this.state.name) { this.handler() } }
@@ -26,6 +29,9 @@ export default class App extends Component {
                 <BrowserRouter>
                     <Switch>
                         <Route exact path='/' component={HomePage} />
+                        <Route exact path='/login' component={Login}/>
+                        <Route exact path='/register' component={Register}/>
+                        
                     </Switch>
                 </BrowserRouter>
                 <Footer />
