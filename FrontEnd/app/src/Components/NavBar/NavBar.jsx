@@ -90,12 +90,12 @@ export default class NavBar extends Component {
                 details: []
             },
             {
-                link: "/conferenceAdmin", //TODO: remove this //FIXME:
+                link: "/conference-admin", //TODO: remove this //FIXME:
                 text: "Conference Admin",
                 details: []
             },
             {
-                link: "/pastProceedings",
+                link: "/past-proceedings",
                 text: "Past Proceedings",
                 details: []
             },
@@ -110,8 +110,8 @@ export default class NavBar extends Component {
                 details: []
             },
             {
-                link: "/contactUs",
-                text: "Dashboard",
+                link: "/research-paper",
+                text: "Research Paper",
                 details: []
             }
         ];
