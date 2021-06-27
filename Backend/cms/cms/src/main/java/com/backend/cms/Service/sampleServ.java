@@ -2,11 +2,9 @@ package com.backend.cms.Service;
 
 import com.backend.cms.Model.User;
 import com.backend.cms.Model.Payment;
-import com.backend.cms.Model.Workshop;
 import com.backend.cms.Model.sampleMod;
 import com.backend.cms.Repository.PaymentRepo;
 import com.backend.cms.Repository.UserRepository;
-import com.backend.cms.Repository.WorkshopRepo;
 import com.backend.cms.Repository.sampleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,8 +17,7 @@ public class sampleServ {
     public UserRepository userRepository;
     @Autowired
     public PaymentRepo paymentRepo;
-    @Autowired
-    public WorkshopRepo workshopRepo;
+
 
 
     public boolean testMethod(sampleMod sample){
@@ -36,5 +33,5 @@ public class sampleServ {
         return  userRepository.save(user);
     }
     public Payment savePayment(Payment payment) { return  paymentRepo.save(payment); }
-    public Workshop saveWorkshopDetails(Workshop workshop) { return  workshopRepo.save(workshop); }
+
 }
