@@ -13,7 +13,8 @@ export default class NavBar extends Component {
     renderNavBar = (index, item) => {
         console.log("renderNavBar :: index, item", index, item);
         return (
-            <Nav.Link key={index} href={item.link} style={{ paddingLeft: 20, fontSize: 18, color: 'black' }}>{item.text}</Nav.Link>
+            <Nav.Link key={index} href={item.link} style={{ paddingLeft: 20, fontSize: 20 }}>{item.text}</Nav.Link>
+            // <li key={index}><a href={item.link}>{item.text}</a></li>
         )
     }
 
@@ -21,10 +22,10 @@ export default class NavBar extends Component {
         console.log("renderDropDownList :: index,item", index, item);
         return (
 
-            <NavDropdown key={index} title={item.text} id="basic-nav-dropdown" style={{ paddingLeft: 20, fontSize: 18, color: 'black' }}>
+            <NavDropdown key={index} title={item.text} id="basic-nav-dropdown" style={{ paddingLeft: 20, fontSize: 20 }}>
                 {item.details.map((details, i) => {
                     return (
-                        <div key={index} >
+                        <div>
                             <NavDropdown.Item href={details.link}>{details.text}</NavDropdown.Item>
                             <NavDropdown.Divider />
                         </div>
@@ -32,19 +33,31 @@ export default class NavBar extends Component {
                 })
                 }
             </NavDropdown>
+            // <li key={index}><a href={item.link}>{item.text} <VscTriangleDown /></a>
+            //     {item.details.length > 0 ?
+            //         <ul className="submenu">
+            //             {item.details.map((details, i) => {
+            //                 //console.log("details.link", details.link);
+            //                 return (
+            //                     <li key={i}><a href={details.link}>{details.text}</a></li>
+            //                 )
+            //             })
+            //             }
+            //         </ul> : ""}
+            // </li>
         )
     }
 
     render() {
 
-        const li = [
+        const li = [ //TODO: 
             {
                 link: "/",
                 text: "Home",
                 details: []
             },
             {
-                link: "/keynotes",
+                link: "/keynotes/",
                 text: "Keynotes",
                 details: []
             },
@@ -85,17 +98,17 @@ export default class NavBar extends Component {
                 ]
             },
             {
-                link: "/conference",
-                text: "Conference",
-                details: []
+                link: "/workshops",
+                text: "Workshops",
+                details: [
+                    {
+                        link: "/addWorkshop",
+                        text: "AddWorkshop"
+                    },
+                ]
             },
             {
-                link: "/conference-admin", //TODO: remove this //FIXME:
-                text: "Conference Admin",
-                details: []
-            },
-            {
-                link: "/past-proceedings",
+                link: "/pastProceedings",
                 text: "Past Proceedings",
                 details: []
             },
@@ -110,33 +123,47 @@ export default class NavBar extends Component {
                 details: []
             },
             {
-                link: "/research-paper",
-                text: "Research Paper",
+                link: "/contactUs",
+                text: "Dashboard",
                 details: []
             }
         ];
 
         return (
-            <Navbar fixed="top" bg="light" expand="lg" style={{ top: 0, position: 'sticky' }}>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mr-auto" style={{ paddingLeft: 150 }}>
-                        {li.map((item, index) => {
-                            return (
-                                item.details.length > 0 ? this.renderDropDownList(index, item) : this.renderNavBar(index, item)
-                            )
-                        })}
-                    </Nav>
-                </Navbar.Collapse>
-                {/* <Navbar.Brand href="/">
-                    <img
-                        src={logo}
-                        width="70"
-                        height="70"
-                        className="d-inline-block align-top" />
-                </Navbar.Brand> */}
-            </Navbar>
+            <Navbar fixed="top" bg="light" expand="lg" style={{ top: 0, position:'sticky'}}>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="mr-auto" style={{paddingLeft: 150}}>
+                            {li.map((item, index) => {
+                                return (
+                                    item.details.length > 0 ? this.renderDropDownList(index, item) : this.renderNavBar(index, item)
+                                )
+                            })}
+                        </Nav>
+                    </Navbar.Collapse>
+                    <Navbar.Brand href="/">
+                        <img
+                            src={logo}
+                            width="70"
+                            height="70"
+                            className="d-inline-block align-top" />
+                    </Navbar.Brand>
+                </Navbar>
+
+            // <div className="header">
+            //     <ul className="menu">
+            //         {li.map((item, index) => {
+            //             //console.log("Navbar index, item", index, item);
+            //             //console.log("Navbar index, item.link", item.link);
+            //             return (
+            //                 item.details.length > 0 ? this.renderDropDownList(index, item) : this.renderNavBar(index, item)
+            //             )
+            //         })
+            //         }
+            //         <div className="logo">ICAF</div>
+            //     </ul>
+            //     {/* <div className="logo">ICAF</div> */}
+            // </div>
         );
     }
 }
-
