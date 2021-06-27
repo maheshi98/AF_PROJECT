@@ -8,6 +8,7 @@ import Register from './Components/Register/Register';
 import Keynotes from './Components/Keynotes/Keynotes';
 import Conference from './Components/Conference/Conference';
 import Committee from './Components/Committee/Committee';
+import PastProceedings from './Components/PastProceedings/PastProceedings';
 
 //TODO: remove if no need
 import ConferenceAdmin from './Components/Conference/ConferenceAdmin/ViewConference/ViewConference';
@@ -30,9 +31,10 @@ export default class App extends Component {
                         <Route exact path='/register' component={Register} />
                         <Route exact path='/keynotes' component={Keynotes} />
                         <Route exact path='/conference' component={Conference} />
-                        <Route exact path='/conferenceAdmin' component={ConferenceAdmin} />
-                        <Route exact path='/createConference' component={CreateConference} />
-                        <Route exact path='/committee' component={Committee} />committee
+                        <Route exact path='/conference-admin' component={ConferenceAdmin} />
+                        <Route exact path='/create-conference' component={CreateConference} />
+                        <Route exact path='/committee' component={Committee} />
+                        <Route exact path='/past-proceedings' component={PastProceedings} />
                     </Switch>
                 </BrowserRouter>
                 <Footer />
