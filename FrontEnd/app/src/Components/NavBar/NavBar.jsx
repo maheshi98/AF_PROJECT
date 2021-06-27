@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import logo from 'url:~/src/Assets/new.png';
 import { IoMdArrowDropdownCircle } from 'react-icons/io';
 import { VscTriangleDown } from "react-icons/vsc";
 import './NavBarStyles.css';
@@ -11,38 +13,38 @@ export default class NavBar extends Component {
     renderNavBar = (index, item) => {
         console.log("renderNavBar :: index, item", index, item);
         return (
-            <li key={index}><a href={item.link}>{item.text}</a></li>
+            <Nav.Link key={index} href={item.link} style={{ paddingLeft: 20, fontSize: 18, color: 'black' }}>{item.text}</Nav.Link>
         )
     }
 
     renderDropDownList = (index, item) => {
         console.log("renderDropDownList :: index,item", index, item);
         return (
-            <li key={index}><a href={item.link}>{item.text} <VscTriangleDown /></a>
-                {item.details.length > 0 ?
-                    <ul className="submenu">
-                        {item.details.map((details, i) => {
-                            //console.log("details.link", details.link);
-                            return (
-                                <li key={i}><a href={details.link}>{details.text}</a></li>
-                            )
-                        })
-                        }
-                    </ul> : ""}
-            </li>
+
+            <NavDropdown key={index} title={item.text} id="basic-nav-dropdown" style={{ paddingLeft: 20, fontSize: 18, color: 'black' }}>
+                {item.details.map((details, i) => {
+                    return (
+                        <div key={index} >
+                            <NavDropdown.Item href={details.link}>{details.text}</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                        </div>
+                    )
+                })
+                }
+            </NavDropdown>
         )
     }
 
     render() {
 
-        const li = [ //TODO: 
+        const li = [
             {
                 link: "/",
                 text: "Home",
                 details: []
             },
             {
-                link: "/keynotes/",
+                link: "/keynotes",
                 text: "Keynotes",
                 details: []
             },
@@ -83,12 +85,17 @@ export default class NavBar extends Component {
                 ]
             },
             {
-                link: "/workshops/",
-                text: "Workshops",
+                link: "/conference",
+                text: "Conference",
                 details: []
             },
             {
-                link: "/pastProceedings",
+                link: "/conference-admin", //TODO: remove this //FIXME:
+                text: "Conference Admin",
+                details: []
+            },
+            {
+                link: "/past-proceedings",
                 text: "Past Proceedings",
                 details: []
             },
@@ -103,29 +110,33 @@ export default class NavBar extends Component {
                 details: []
             },
             {
-                link: "/contactUs",
-                text: "Dashboard",
+                link: "/research-paper",
+                text: "Research Paper",
                 details: []
             }
         ];
 
-
         return (
-            <div className="header">
-               
-                <ul className="menu">
-                    {li.map((item, index) => {
-                        //console.log("Navbar index, item", index, item);
-                        //console.log("Navbar index, item.link", item.link);
-                        return (
-                            item.details.length > 0 ? this.renderDropDownList(index, item) : this.renderNavBar(index, item)
-                        )
-                    })
-                    }
-                    <div className="logo">ICAF</div>
-                </ul>
-                {/* <div className="logo">ICAF</div> */}
-            </div>
+            <Navbar fixed="top" bg="light" expand="lg" style={{ top: 0, position: 'sticky' }}>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto" style={{ paddingLeft: 150 }}>
+                        {li.map((item, index) => {
+                            return (
+                                item.details.length > 0 ? this.renderDropDownList(index, item) : this.renderNavBar(index, item)
+                            )
+                        })}
+                    </Nav>
+                </Navbar.Collapse>
+                {/* <Navbar.Brand href="/">
+                    <img
+                        src={logo}
+                        width="70"
+                        height="70"
+                        className="d-inline-block align-top" />
+                </Navbar.Brand> */}
+            </Navbar>
         );
     }
 }
+
