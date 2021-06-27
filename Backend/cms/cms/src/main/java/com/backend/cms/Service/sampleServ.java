@@ -19,6 +19,7 @@ public class sampleServ {
     public PaymentRepo paymentRepo;
 
 
+
     public boolean testMethod(sampleMod sample){
         sampleMod result=obj.save(sample);
         if(result==null) {
@@ -31,6 +32,6 @@ public class sampleServ {
     public User saveUser(User user) {
         return  userRepository.save(user);
     }
-    public Payment savePayment(Payment payment) { return  paymentRepo.save(payment);
-    }
+    public Payment savePayment(Payment payment) { return  paymentRepo.save(payment); }
+
 }
