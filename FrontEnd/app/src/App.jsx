@@ -22,7 +22,7 @@ export default class App extends Component {
     // handler = () => { this.setState() }
     render() {
         return (
-            <div>
+            <div className= "body">
                 <NavBar />
                 <BrowserRouter>
                     <Switch>

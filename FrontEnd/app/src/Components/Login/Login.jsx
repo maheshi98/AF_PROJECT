@@ -1,49 +1,130 @@
 import React, { Component } from 'react'
 import './Login.css';
-
+import Button from 'react-bootstrap/Button';
+import RegisterUserService from '../../Services/RegisterUserService';
 
 export default class Login extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props){
+    super(props);
+    
+    this.state = {
+    currentUser : [],
+    userInvalid : [],
+  
+    email : null,
+    password : null,
+    error : null,
+    isFound : false,
+    isValid : false,
 
-        this.state = {
-                 
-        }
-
-        this.handleEvent = this.handleEvent.bind(this)
-    }
+    };
+  }
+  handleChange = this.handleChange.bind(this);
+  shoot = this.shoot.bind(this);
 
     componentDidMount() {
         
-    }
+    }  handleChange(event) {  
+    this.setState({
+      [event.target.name]: event.target.value,
+      
+  });
 
-    componentDidUpdate(prevProps, prevState, snapshot) { if (prevState.name !== this.state.name) { this.handler() } }
+  
+}
+shoot(event){
+  //console.log(this.state.email , this.state.password);
+ /* UserService.getUserById(this.state.email).then(res => {
+    let user = res.data;
+    console.log('User => ' + JSON.stringify(user));
+    this.props.history.push("/CustomerProfile")
+});*/
+    event.preventDefault();
 
-    componentWillUnmount() {
+    RegisterUserService.getUserByIdOptional(this.state.email).then(res => {
+      this.state.isFound = true;
+      let user = res.data;
+      console.log('User => ' + JSON.stringify(user));
+      //this.props.history.push("/CustomerProfile");
+
+      if(user == null){
+        this.state.isFound = false;
+        alert("Invalid Credentials!!");
+        return;
+      }
+      
+      if(this.state.email == user.email && this.state.password == user.password){
+        this.state.isFound = true;
+        window.sessionStorage.setItem("UserId", user.email);
+        this.state.isValid = true;
+        this.state.currentUser = user;
         
-    }
 
-    // Prototype methods, Bind in Constructor (ES2015)
-    handleEvent() {}
 
-    // Class Properties (Stage 3 Proposal)
-    handler = () => { this.setState() }
+      } else{
+
+        //window.sessionStorage.setItem("UserId", "NF");
+        this.state.isValid =  false;
+      }
+
+      
+      if(this.state.isValid == true){
+        if(user.role == "USER"){
+          window.sessionStorage.setItem("UserRole","USER");
+          this.state.isFound = true;
+          this.props.history.push('/');
+          window.sessionStorage.setItem("UserRole","USER");
+
+          if(user.roleId == "Attendee"){
+            this.state.isFound = true;
+            this.props.history.push('/');
+            window.sessionStorage.setItem("RoleType","Attendee");
+
+          }else if(user.roleId == "Workshop Conductor"){
+            this.state.isFound = true;
+            this.props.history.push('/');
+            window.sessionStorage.setItem("RoleType","Workshop Conductor");
+          }
+          else if(user.roleId == "Researcher"){
+            this.state.isFound = true;
+            this.props.history.push('/');
+            window.sessionStorage.setItem("RoleType","Researcher");
+          }
+        }
+        else if(user.role == "ADMIN"){
+          window.sessionStorage.setItem("UserRole","ADMIN");
+          this.state.isFound = true;
+          this.props.history.push('/');
+          window.sessionStorage.setItem("UserRole","ADMIN");
+        }
+        else if(user.role == "EDITOR"){
+          window.sessionStorage.setItem("UserRole","EDITOR");
+          this.state.isFound = true;
+          this.props.history.push('/');
+          window.sessionStorage.setItem("UserRole","EDITOR");
+        }
+        else if(user.role == "REVEIWER"){
+          window.sessionStorage.setItem("UserRole","REVEIWER");
+          this.state.isFound = true;
+          this.props.history.push('/');
+          window.sessionStorage.setItem("UserRole","REVEIWER");
+        }
+      } else if(this.state.isValid == false && this.state.isFound == true) {
+        this.state.isFound = true;
+        alert("Password does not match with the given email!");
+        this.props.history.push('/login');
+
+      } 
+      
+
+      //this.props.history.push("/CustomerProfile")
+    });
+}
+
+
+   
 
     render() {
-
-        // const pass_field = document.querySelector('.pass-key');
-        // const showBtn = document.querySelector('.show');
-        // showBtn.addEventListener('click', function(){
-        //  if(pass_field.type === "password"){
-        //    pass_field.type = "text";
-        //    showBtn.textContent = "HIDE";
-        //    showBtn.style.color = "#3498db";
-        //  }else{
-        //    pass_field.type = "password";
-        //    showBtn.textContent = "SHOW";
-        //    showBtn.style.color = "#222";
-        //  }
-        // });
         return (
             <div className="bg-img">
         <div className="content">
@@ -51,18 +132,18 @@ export default class Login extends Component {
           <form action="#">
             <div className="field">
               <span className="fa fa-user" />
-              <input type="text" required placeholder="Email or Phone" />
+              <input type = "email" required placeholder="Email or Phone" value={this.state.email}  onChange={this.handleChange} className="form-control"name="email"/>
             </div>
             <div className="field space">
               <span className="fa fa-lock" />
-              <input type="password" className="pass-key" required placeholder="Password" />
+              <input type = "password" value={this.state.password} onChange={this.handleChange}className="form-control" name="password" placeholder="Enter Password" required/>
               <span className="show">SHOW</span>
             </div>
             <div className="pass">
               <a href="#">Forgot Password?</a>
             </div>
-            <div className="field">
-              <input type="submit" defaultValue="LOGIN" />
+            <div>
+            <Button type="submit" variant="primary btn-lg" onClick={this.shoot} className="btn btn-danger btn-block" ><font size="4">Login</font></Button>
             </div>
           </form>
           <div className="login">Or login with</div>
