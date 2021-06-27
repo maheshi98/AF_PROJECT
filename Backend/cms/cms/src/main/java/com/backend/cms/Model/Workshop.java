@@ -7,16 +7,42 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Workshop {
 
         @Id
-        private String userid;
+        private String _id;
+        private String userId;
         private String workshopTitle;
         private String date;
         private String time;
         private int mobileNo;
         private String email;
+        private String proposal;
+        private String fileLink;
+        private String status;
 
-    public String getUserid() { return userid; }
+    public Workshop(String _id, String userId, String workshopTitle, String date, String time, int mobileNo, String email, String proposal,
+                    String fileLink, String status) {
+        super();
+        this._id = _id;
+        this.userId = userId;
+        this.workshopTitle = workshopTitle;
+        this.date = date;
+        this.time = time;
+        this.mobileNo = mobileNo;
+        this.email = email;
+        this.proposal = proposal;
+        this.fileLink = fileLink;
+        this.status = status;
+    }
+    public Workshop() {
+        super();
+    }
 
-    public void setUserid(String userid) { this.userid = userid; }
+    public String get_id() { return _id; }
+
+    public void set_id(String _id) { this._id = _id; }
+
+    public String getUserId() { return userId; }
+
+    public void setUserId(String userid) { this.userId = userid; }
 
     public String getWorkshopTitle() { return workshopTitle; }
 
@@ -37,4 +63,23 @@ public class Workshop {
     public String getEmail() { return email; }
 
     public void setEmail(String email) { this.email = email; }
+
+    public String getProposal() { return proposal; }
+
+    public void setProposal(String proposal) { this.proposal = proposal; }
+
+    public String getFileLink() { return fileLink; }
+
+    public void setFileLink(String fileLink) { this.fileLink = fileLink; }
+
+    public String getStatus() { return status; }
+
+    public void setStatus(String status) { this.status = status; }
+
+    @Override
+    public String toString() {
+        return "Workshop [_id=" + _id + ", userId=" + userId + ", workshopTitle=" + workshopTitle + ", date=" + date + ",time=" + time + ", mobileNo="
+                + mobileNo + ", email=" + email + ", proposal=" + proposal + ", fileLink=" + fileLink + ", status="
+                + status + "]";
+    }
 }
