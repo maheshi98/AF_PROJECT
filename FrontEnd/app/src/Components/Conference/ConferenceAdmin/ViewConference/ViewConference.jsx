@@ -9,7 +9,7 @@ export default class ViewConference extends Component {
         return (
             <div className='container'>
                 <div id='viewConference'>
-                    <Link to='/createConference'> <Button style={{ marginBottom: 20 }} variant="secondary" >Create Conference</Button></Link>
+                    <Link to='/create-conference'> <Button style={{ marginBottom: 20 }} variant="secondary" >Create Conference</Button></Link>
                     <Table striped bordered hover>
                         <thead>
                             <tr>

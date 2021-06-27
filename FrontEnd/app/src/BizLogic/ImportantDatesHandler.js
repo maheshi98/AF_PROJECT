@@ -6,7 +6,7 @@ import ImportantDateService from '../Services/ImportantDate';
  * @memberof ImportantDatesHandler
  */
 export const getImportantDateByIdFn = (id) => {
-    console.log("ImportantDatesHandler :: getImportantDateByIdFn", id);;
+    console.log("ImportantDatesHandler :: getImportantDateByIdFn", id);
     return ImportantDateService.get(id).then(response => response.data);
 }
 
