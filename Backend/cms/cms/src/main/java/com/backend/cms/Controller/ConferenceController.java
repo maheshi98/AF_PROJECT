@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
 @RequestMapping("/conference")
-public class ConferenceCon {
+public class ConferenceController {
 
     @Autowired
     ConferenceRepo conferenceRepo;
@@ -25,6 +26,17 @@ public class ConferenceCon {
             return new ResponseEntity<>(_conference, HttpStatus.CREATED);
         }catch(Exception e){
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Conference> getRequestById(@PathVariable("id") String id) {
+        Optional<Conference> requestData = conferenceRepo.findById(id);
+
+        if(requestData.isPresent()){
+            return new ResponseEntity<>(requestData.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 

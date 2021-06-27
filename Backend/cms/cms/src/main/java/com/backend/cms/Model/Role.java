@@ -1,19 +1,14 @@
 package com.backend.cms.Model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "role")
 public class Role {
 
     @Id
     private String id;
     private String name;
     private String description;
-
-    @DBRef
-    private RoleType roleType;
+    private String TypeId;
 
     public String getId() {
         return id;
@@ -37,13 +32,5 @@ public class Role {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public RoleType getRoleType() {
-        return roleType;
-    }
-
-    public void setRoleType(RoleType roleType) {
-        this.roleType = roleType;
     }
 }

@@ -1,64 +1,42 @@
 import React, { Component } from 'react';
-import { CardGroup, Card } from 'react-bootstrap';
 import './PaperTopicsStyles.css';
+import Error from '../../NotFound/NotFound';
 
 export default class MainSection extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isSelected: false,
         }
-    }
-
-    componentDidMount() {
-        this.setState({ isSelected: true })
     }
 
     render() {
         return (
-            <div style={{margin: 20}}>
-                <CardGroup>
-                    <Card>
-                        <Card.Img variant="top" src="holder.js/100px160" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
-      </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                    <Card>
-                        <Card.Img variant="top" src="holder.js/100px160" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This card has supporting text below as a natural lead-in to additional
-        content.{' '}
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                    <Card>
-                        <Card.Img variant="top" src="../../../Assets/logo.png" />
-                        <Card.Body>
-                            <Card.Title>Card title</Card.Title>
-                            <Card.Text>
-                                This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This card has even longer content than the first to
-                                show that equal height action.
-      </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Last updated 3 mins ago</small>
-                        </Card.Footer>
-                    </Card>
-                </CardGroup>
+            <div id='topics'>
+                <div className='container'>
+                    <div className='section-title text-center'>
+                        <h2>Submission Topics</h2>
+                        <p>Papers can be submitted to the conference under the following regular tracks</p>
+                    </div>
+                    <div className='row'>
+                        {
+                            this.state.dates ? this.state.dates.map((item, index) => (
+                                <div className='col-md-4'>
+                                    <div className='topic'>
+                                        <div className='topic-content'>
+                                            <h3>{item.description}</h3>
+                                            <p>Hellow world submit document here.</p>
+                                            <div className='topic-meta'>{item.date}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                            ) :
+                                <div>
+                                    <Error />
+                                </div>
+                        }
+                    </div>
+                </div>
             </div>
         );
     }
