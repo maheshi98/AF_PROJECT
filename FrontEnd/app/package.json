@@ -4,16 +4,7 @@
   "description": "conference management system",
   "main": "index.jsx",
   "scripts": {
-    "start": "parcel index.html --open",
-    "test": "jest"
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.js"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules/"
-    ]
+    "start": "parcel index.html --open"
   },
   "repository": {
     "type": "git",
@@ -26,29 +17,18 @@
   },
   "homepage": "https://github.com/maheshi98/AF_PROJECT#readme",
   "devDependencies": {
-    "@babel/core": "^7.13.16",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/preset-env": "^7.13.15",
-    "@babel/preset-react": "^7.13.13",
-    "@parcel/transformer-image": "^2.0.0-beta.2",
     "@parcel/transformer-sass": "^2.0.0-beta.2",
-    "@types/jest": "^26.0.23",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
-    "babel-jest": "^27.0.2",
-    "enzyme": "^3.11.0",
-    "jest": "^27.0.3",
-    "jest-enzyme": "^7.1.2",
     "parcel": "^2.0.0-beta.2"
   },
   "dependencies": {
-    "@react-google-maps/api": "^2.2.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "react": "^17.0.2",
-    "react-bootstrap": "^1.6.1",
+    "react-bootstrap": "^1.6.0",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
-    "react-select": "^4.3.1"
+    "save": "^2.4.0"
   }
 }
