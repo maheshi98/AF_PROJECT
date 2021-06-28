@@ -10,7 +10,7 @@ class WorkshopDataService {
     }
   
     create(data) {
-      return http.post("/workshop", data);
+      return http.post("/workshop/create", data);
     }
   
     update(id, data) {
@@ -22,7 +22,23 @@ class WorkshopDataService {
     }
   
     findByUserId(id) {
-      return http.get(`/tutorials?title=${id}`);
+      return http.get(`/workshop/byUserId/{id}`);
+    }
+    upload(file, onUploadProgress) {
+      let formData = new FormData();
+  
+      formData.append("file", file);
+  
+      return http.post("/workshop/uploadFile", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        onUploadProgress,
+      });
+    }
+  
+    getFiles() {
+      return http.get("workshop/downloadFile/{fileName:.+}");
     }
   }
   

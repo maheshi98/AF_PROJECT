@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import WorkshopDataService from '../../../Services/WorkshopService';
-import { Row } from 'react-bootstrap';
+import { Row, Col, Form, Button } from 'react-bootstrap';
 import './addWorkshops.css';
 
 
@@ -12,9 +12,9 @@ const initialState = {
      time: "",
      mobileNo: "",
      email: "",
-     proposal: "",
-     fileLink: "",
-     status: "",
+    // proposal: "",
+     //fileLink: "",
+     //status: "",
      submitted: false
 }
 
@@ -23,6 +23,7 @@ export default class addWorkShop extends Component{
         super(props);
         this.onChange = this.onChange.bind(this);
         this.state = initialState;
+        this.saveWorkshop = this.saveWorkshop.bind(this);
     }
        
         onChange(e) {
@@ -67,49 +68,56 @@ export default class addWorkShop extends Component{
               <h4>Add Your Workshop proposal</h4>
               </div>
               <Row className="landing">
-                    <form style={{ width: "80%", marginLeft: "10%", marginTop: "10%" }}>
-                      <div className="input_field"> 
-                        <input 
+                <Col>
+                    <form onSubmit={this.saveWorkshop} style={{ width: "80%", marginLeft: "10%", marginTop: "10%" }}>
+                    <Form.Group >
+                      <Form.Label>Workshop Title</Form.Label>
+                        <Form.Control 
                         type="text" 
                         name="workshopTitle" 
                         placeholder="workshopTitle" required 
                         value ={this.state.workshopTitle}
                         onChange={this.onChange}/>
-                      </div>
-                      <div className="input_field"> 
-                        <input 
+                        </Form.Group>
+                     <Form.Group>
+                     <Form.Label>Date</Form.Label>
+                        <Form.Control
                         type="text" 
                         name="date" 
                         placeholder="Date" required 
                         value ={this.state.date}
                         onChange={this.onChange} />
-                      </div>
-                      <div className="input_field"> 
-                        <input 
+                      </Form.Group>
+                        <Form.Group>
+                        <Form.Label>Time</Form.Label>
+                          <Form.Control
                         type="text" 
                         name="time" 
                         placeholder="Time" required 
                         value ={this.state.time}
                         onChange={this.onChange}/>
-                      </div>
-                        <div className="input_field"> 
-                         <input 
+                        </Form.Group>
+                        <Form.Group>
+                        <Form.Label>Mobile Number</Form.Label>
+                         <Form.Control 
                          type="number" 
                          name="mobileNo" 
                          placeholder="MobileNumber" required 
                          value ={this.state.mobileNo}
                          onChange={this.onChange}/>
-                          </div>
-                      <div className="input_field">
-                          <input 
+                          </Form.Group>
+                      <Form.Group>
+                      <Form.Label>Email</Form.Label>
+                          <Form.Control 
                           type="text" 
                           name="email" 
                           placeholder="Email" required 
                           value ={this.state.email}
                           onChange={this.onChange} />
-                          </div>  
-                          <button onClick={this.saveWorkshop} className="btn btn-success">Submit </button>
+                          </Form.Group>
+                          <Button type="submit" style={{ backgroundColor: '#37474F', paddingRight: 10 }}>Submit</Button> {''}
                     </form>
+                    </Col>
                   </Row>
                 </div>
               </div>

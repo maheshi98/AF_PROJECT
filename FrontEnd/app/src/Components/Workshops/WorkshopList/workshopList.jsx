@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import WorkshopService from '../../../Services/WorkshopService';
 import { Link } from "react-router-dom";
+import './workshopList.css';
 
 export default class workshopList extends Component {
     constructor(props) {
       super(props);
       this.retrieveWorkshops = this.retrieveWorkshops.bind(this);
+      this.refreshList = this.refreshList.bind(this);
       this.setActiveWorkshop = this.setActiveWorkshop.bind(this);
 
       this.state = {
         workshops: [],
         currentWorkshop: null,
-        currentIndex: -1,
-        searchTitle: ""
+        currentIndex: -1
       }
     }
 
@@ -33,7 +34,15 @@ export default class workshopList extends Component {
           });
       }
 
-      setActiveWorkshop(workshop, index) {
+      refreshList() {
+        this.retrieveWorkshops();
+        this.setState({
+          currentWorkshop: null,
+          currentIndex: -1
+        });
+      }
+    
+  setActiveWorkshop(workshop, index) {
         this.setState({
           currentWorkshop: workshop,
           currentIndex: index
@@ -60,26 +69,44 @@ export default class workshopList extends Component {
                   onClick={() => this.setActiveWorkshop(workshop, index)}
                   key={index}
                 >
-                  {workshop.title}
+                  {workshop.workshopTitle}
                 </li>
               ))}
           </ul>
         </div>
         <div className="col-md-6">
-          {currentTutorial ? (
+          {currentWorkshop ? (
             <div>
               <h4>Workshop</h4>
               <div>
                 <label>
                   <strong>WorkshopTitle:</strong>
                 </label>{" "}
-                {currentWorkshop.title}
+                {currentWorkshop.workshopTitle}
               </div>
               <div>
                 <label>
                   <strong>MobileNo:</strong>
                 </label>{" "}
-                {currentWorkshop.description}
+                {currentWorkshop.mobileNo}
+              </div>
+              <div>
+                <label>
+                  <strong>Email:</strong>
+                </label>{" "}
+                {currentWorkshop.email}
+              </div>
+              <div>
+                <label>
+                  <strong>Date:</strong>
+                </label>{" "}
+                {currentWorkshop.date}
+              </div>
+              <div>
+                <label>
+                  <strong>Time:</strong>
+                </label>{" "}
+                {currentWorkshop.time}
               </div>
               <div>
                 <label>
@@ -89,7 +116,7 @@ export default class workshopList extends Component {
               </div>
 
               <Link
-                to={"/tutorials/" + currentTutorial.id}
+                to={"/workshop/" + currentWorkshop.id}
                 className="badge badge-warning"
               >
                 Edit
@@ -98,7 +125,7 @@ export default class workshopList extends Component {
           ) : (
             <div>
               <br />
-              <p>Please click on a Tutorial...</p>
+              <p>Please click on a Workshop...</p>
             </div>
           )}
         </div>
