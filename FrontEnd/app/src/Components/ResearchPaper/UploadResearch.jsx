@@ -1,95 +1,141 @@
-import React, { Component } from 'react'
-import './Register.css';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Select from 'react-select';
+import { Row, Col, Button, Form, Image, Alert } from 'react-bootstrap';
+import add from 'url:~/src/Assets/add.png';
+import {CommonGet, CommonPost} from "../Common/config";
+//import {toast, ToastContainer} from "react-toastify";
+//import "react-toastify/dist/ReactToastify.css"
+//import './CreateConference.css';
+//import { createConferenceFn, getAllImportantDateFn } from '../../../../BizLogic'; //TODO: get papers & workshops
 
-export default class Register extends Component {
+
+
+export default class UploadResearch extends Component {
+
     constructor(props) {
-        super(props)
-
+        super(props);
         this.state = {
-                 
-        }
 
-        this.handleEvent = this.handleEvent.bind(this)
-    }
+          name: "",
+          email: "",
+          contact_no: "",
+          title: "",
+          pdf: "",
+    
+        }}
 
     componentDidMount() {
-        
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) { if (prevState.name !== this.state.name) { this.handler() } }
+    
+    handleOnChange = (event) => {
+      console.log("ABC",event.target.value);
+      const state = this.state
+      state[event.target.name] = event.target.value;
+      this.setState(state);
+    };
 
-    componentWillUnmount() {
-        
+    handleOnClick = (event) => {
+      event.preventDefault();
+
+      let formData =
+      {
+          "name": this.state.name,
+          "email":this.state.email ,
+          "contact_no":this.state.contact_no ,
+          "title":this.state.title ,
+          "pdf":this.state.pdf
+      }
+      CommonPost('researchers/saveReseachppr', formData)
+      .then(res => res.json())
+      .then(json => {
+          this.setState({
+              isLoaded: true,
+
+          })
+      });
+      //toast.success("Successfully Added !");
     }
 
-    // Prototype methods, Bind in Constructor (ES2015)
-    handleEvent() {}
-
-    // Class Properties (Stage 3 Proposal)
-    handler = () => { this.setState() }
 
     render() {
         return (
-            <div>
-        <div className="form_wrapper">
-          <div className="form_container">
-            <div className="title_container">
-             
-            </div>
-            <div className="row clearfix">
-              <div className>
-                <form>
-                  <div className="input_field">
-                    <input type="email" name="email" placeholder="Email" required />
-                  </div>
-                  <div className="input_field"> <span><i aria-hidden="true" className="fa fa-lock" /></span>
-                    <input type="password" name="password" placeholder="Password" required />
-                  </div>
-                  <div className="input_field"> <span><i aria-hidden="true" className="fa fa-lock" /></span>
-                    <input type="password" name="password" placeholder="Re-type Password" required />
-                  </div>
-                  <div className="row clearfix">
-                    <div className="col_half">
-                      <div className="input_field"> <span><i aria-hidden="true" className="fa fa-user" /></span>
-                        <input type="text" name="name" placeholder="First Name" />
-                      </div>
+            <div className='container'>
+                <div id='createConference'>
+                    <div className='section-title text-center'>
+                        <h3>Add new Research Paper</h3>
                     </div>
-                    <div className="col_half">
-                      <div className="input_field"> <span><i aria-hidden="true" className="fa fa-user" /></span>
-                        <input type="text" name="name" placeholder="Last Name" required />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="input_field radio_option">
-                    <input type="radio" name="radiogroup1" id="rd1" />
-                    <label htmlFor="rd1">Male</label>
-                    <input type="radio" name="radiogroup1" id="rd2" />
-                    <label htmlFor="rd2">Female</label>
-                  </div>
-                  <div className="input_field select_option">
-                    <select>
-                      <option>Select a country</option>
-                      <option>Option 1</option>
-                      <option>Option 2</option>
-                    </select>
-                    <div className="select_arrow" />
-                  </div>
-                  <div className="input_field checkbox_option">
-                    <input type="checkbox" id="cb1" />
-                    <label htmlFor="cb1">I agree with terms and conditions</label>
-                  </div>
-                  <div className="input_field checkbox_option">
-                    <input type="checkbox" id="cb2" />
-                    <label htmlFor="cb2">I want to receive the newsletter</label>
-                  </div>
-                  
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-        )
+                    <Row className="landing">
+                        <Col >
+                            <Form style={{ width: "80%", marginLeft: "10%", marginTop: "10%" }}>
+                                <Form.Group >
+                                    <Form.Label>Name</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Name"
+                                        value={this.state.name}
+                                        onChange={this.handleOnChange} />
+                                </Form.Group>
+                                <Form.Group >
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Email"
+                                        value={this.state.email}
+                                        onChange={this.handleOnChange} />
+                                </Form.Group>
+                                <Form.Group >
+                                    <Form.Label>Contact Number</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        id="contact_no"
+                                        name="contact_no"
+                                        placeholder="Contact number"
+                                        value={this.state.contact_no}
+                                        onChange={this.handleOnChange}
+                                    />
+                                </Form.Group>
+                                <Form.Group >
+                                    <Form.Label>Title</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        id="title"
+                                        name="title"
+                                        placeholder="Research Topic"
+                                        value={this.state.title}
+                                        onChange={this.handleOnChange}
+                                    />
+                                </Form.Group>
+                                <Form.Group >
+                                    <Form.Label>Upload Your pdf</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        id="pdf"
+                                        name="pdf"
+                                        placeholder="pdf"
+                                        value={this.state.pdf}
+                                        onChange={this.handleOnChange}
+                                    />
+                                </Form.Group>
+                                <br />
+                                <Form.Group>
+                                    <Button type="submit" style={{ backgroundColor: '#37474F', paddingRight: 10 }} onClick={this.handleOnClick}>Submit </Button> {''}
+                                   </Form.Group>
+                            </Form>
+                        </Col>
+                        <Col >
+                            <Image src={add} thumbnail style={{ border: "none" }} />
+                        </Col>
+                    </Row>
+
+                 
+                </div >
+            </div >
+        );
     }
 }
