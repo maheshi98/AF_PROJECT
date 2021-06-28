@@ -6,8 +6,12 @@ import com.backend.cms.Service.ResearchPprService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin
+import java.util.ArrayList;
+import java.util.List;
+
+
 @RestController
+@CrossOrigin(origins = "http://localhost:1234")
 @RequestMapping("/researchers")
 public class ResearchPprController {
 
@@ -19,4 +23,9 @@ public class ResearchPprController {
         return res.saveResearch(researchPpr);
     }
 
+
+    @RequestMapping(value = "/showResearch", method = RequestMethod.GET)
+    public List<ResearchPpr> showData() {
+        return res.showResearch();
+    }
 }
