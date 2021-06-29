@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import WorkshopService from '../../../Services/WorkshopService';
+import { Table } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import './workshopList.css';
 
 export default class workshopList extends Component {
     constructor(props) {
       super(props);
-      this.retrieveWorkshops = this.retrieveWorkshops.bind(this);
-      this.refreshList = this.refreshList.bind(this);
-      this.setActiveWorkshop = this.setActiveWorkshop.bind(this);
+     this.retrieveWorkshops = this.retrieveWorkshops.bind(this);
+      //this.refreshList = this.refreshList.bind(this);
+      //this.setActiveWorkshop = this.setActiveWorkshop.bind(this);
 
-      this.state = {
+     this.state = {
         workshops: [],
-        currentWorkshop: null,
-        currentIndex: -1
+        //currentWorkshop: null,
+        //currentIndex: -1
       }
     }
 
@@ -34,7 +35,7 @@ export default class workshopList extends Component {
           });
       }
 
-      refreshList() {
+    /*  refreshList() {
         this.retrieveWorkshops();
         this.setState({
           currentWorkshop: null,
@@ -47,89 +48,47 @@ export default class workshopList extends Component {
           currentWorkshop: workshop,
           currentIndex: index
         });
-      }
+      }*/
       
   render() {
-    const { workshops, currentWorkshop, currentIndex } = this.state;
+    const { workshops } = this.state;
 
     return (
-      <div className="list row">
-        <div className="col-md-8">
-          <div className="input-group mb-3"></div></div>
-        <div className="col-md-6">
-          <h4>Workshops List</h4>
-        <ul className="list-group">
-            {workshops &&
-              workshops.map((workshop, index) => (
-                <li
-                  className={
-                    "list-group-item " +
-                    (index === currentIndex ? "active" : "")
-                  }
-                  onClick={() => this.setActiveWorkshop(workshop, index)}
-                  key={index}
-                >
-                  {workshop.workshopTitle}
-                </li>
-              ))}
-          </ul>
-        </div>
-        <div className="col-md-6">
-          {currentWorkshop ? (
-            <div>
-              <h4>Workshop</h4>
-              <div>
-                <label>
-                  <strong>WorkshopTitle:</strong>
-                </label>{" "}
-                {currentWorkshop.workshopTitle}
-              </div>
-              <div>
-                <label>
-                  <strong>MobileNo:</strong>
-                </label>{" "}
-                {currentWorkshop.mobileNo}
-              </div>
-              <div>
-                <label>
-                  <strong>Email:</strong>
-                </label>{" "}
-                {currentWorkshop.email}
-              </div>
-              <div>
-                <label>
-                  <strong>Date:</strong>
-                </label>{" "}
-                {currentWorkshop.date}
-              </div>
-              <div>
-                <label>
-                  <strong>Time:</strong>
-                </label>{" "}
-                {currentWorkshop.time}
-              </div>
-              <div>
-                <label>
-                  <strong>Status:</strong>
-                </label>{" "}
-                {currentWorkshop.published ? "Published" : "Pending"}
-              </div>
-
-              <Link
-                to={"/workshop/" + currentWorkshop.id}
-                className="badge badge-warning"
-              >
-                Edit
-              </Link>
-            </div>
-          ) : (
-            <div>
-              <br />
-              <p>Please click on a Workshop...</p>
-            </div>
-          )}
-        </div>
-      </div>
+      <div className="container">
+     <h1>Workshop Details</h1>
+            <Table striped bordered hover>
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Workshop Title</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>MobileNo</th>
+                    <th>Email</th>
+                    <th>Proposal URI</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {
+                        workshops.map((workshop) => (
+                            <tr key={workshop.id}>
+                              <td>{workshop.id}</td>
+                                <td>{workshop.workshopTitle}</td>
+                                <td>{workshop.date}</td>
+                                <td>{workshop.time}</td>
+                                <td>{workshop.mobileNo}</td>
+                                <td>{workshop.email}</td>
+                                <td>{workshop.fileLink}</td>
+                                <td>{workshop.status}</td>
+                                <td/>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </Table>
+         </div>  
     );
-  }
+                  }
 }

@@ -41,7 +41,7 @@ public class workshopDController {
     }
 
     // Update Workshop
-    @PutMapping("/")
+    @PutMapping("/update")
     public Workshop updateWorkshop(@RequestBody Workshop workshop) {
         return workshopService.saveOrUpdateWorkshop(workshop);
     }

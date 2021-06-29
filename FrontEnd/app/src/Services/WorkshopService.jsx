@@ -38,7 +38,7 @@ class WorkshopDataService {
     }
   
     getFiles() {
-      return http.get("workshop/downloadFile/{fileName:.+}");
+      return http.get(`/workshop/downloadFile/{fileName:.+}`);
     }
   }
   

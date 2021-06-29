@@ -103,7 +103,7 @@ export default class NavBar extends Component {
                 details: [  ]
             },
             {
-                link: "/workshop",
+                link: "/workshops",
                 text: "Workshops",
                 details: [  ]
             },

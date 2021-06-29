@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+/*import React, { Component } from 'react'
 import './Login.css';
 import Button from 'react-bootstrap/Button';
 import RegisterUserService from '../../Services/RegisterUserService';
@@ -39,7 +39,7 @@ shoot(event){
     console.log('User => ' + JSON.stringify(user));
     this.props.history.push("/CustomerProfile")
 });*/
-    event.preventDefault();
+  /*  event.preventDefault();
 
     RegisterUserService.getUserByIdOptional(this.state.email).then(res => {
       this.state.isFound = true;
@@ -163,4 +163,4 @@ shoot(event){
         )
     }
 }
-
+*/
