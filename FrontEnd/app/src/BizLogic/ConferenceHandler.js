@@ -9,13 +9,11 @@ export const createConferenceFn = (data) => {
     console.log("ConferenceHandler :: createConferenceFn", data);
     ConferenceService.create(data)
         .then(response => {
-            // return "Data successfully entered.";
             alert('Data successfully entered.');
         })
         .catch(error => {
             console.log(error.message);
             alert(error.message);
-            // return error.message;
         })
 }
 
@@ -41,7 +39,6 @@ export const getConferenceByIdFn = (id) => {
     return ConferenceService.get(id).then(response => response.data);
 }
 
-
 /**
  * @description This method get Approved Conference
  * @param {Function} callback
@@ -52,4 +49,39 @@ export const getApprovedConferenceFn = (callback) => {
     ConferenceService.approvedConference()
         .then(response => callback({ data: response.data }))
         .catch(error => callback({ error: error }));
+}
+
+/**
+ * @description This method delete conference
+ * @param {String} id 
+ * @memberof ConferenceHandler
+ */
+export const deleteConferenceFn = (id) => {
+    console.log("ConferenceHandler :: deleteConferenceFn", id);
+    ConferenceService.delete(id)
+        .then(response => {
+            alert('Data successfully Deleted.');
+        })
+        .catch(error => {
+            console.log(error.message);
+            alert(error.message);
+        })
+}
+
+/**
+ * @description This method change status of conference
+ * @param {String} id 
+ * @param {STring} status
+ * @memberof ConferenceHandler
+ */
+export const changeStatusFn = (id, status) => {
+    console.log("ConferenceHandler :: changeStatusFn", id, status);
+    ConferenceService.changeStatusApproved(id, status)
+        .then(response => {
+            alert('Changed Status.');
+        })
+        .catch(error => {
+            console.log(error.message);
+            alert(error.message);
+        })
 }

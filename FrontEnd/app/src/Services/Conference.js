@@ -18,17 +18,13 @@ class ConferenceService {
         return http.get("/conference/approvedConference");
     }
 
-    // update(id, data) {
-    //     return http.put(`/Requests/${id}`, data);
-    // }
+    delete(id) {
+        return http.delete(`/conference/delete/${id}`);
+    }
 
-    // delete(id) {
-    //     return http.delete(`/Requests/${id}`);
-    // }
-
-    // deleteAll() {
-    //     return http.delete(`/Requests`);
-    // }
+    changeStatusApproved(id, status) {
+        return http.put(`/conference/changeStatus/${status}/${id}`);
+    }
 }
 
 export default new ConferenceService();
