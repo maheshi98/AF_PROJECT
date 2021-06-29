@@ -7,10 +7,28 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class Payment {
     @Id
+    private String Id;
     private String username;
     private String nameOnTheCard;
-    private int cardNumber;
-    private int cvc;
+    private String cardNumber;
+    private String cvc;
+    private String exDate;
+
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
+    }
+
+    public String getExDate() {
+        return exDate;
+    }
+
+    public void setExDate(String exDate) {
+        this.exDate = exDate;
+    }
 
     public String getUsername() { return username; }
 
@@ -20,11 +38,19 @@ public class Payment {
 
     public void setNameOnTheCard(String nameOnTheCard) { this.nameOnTheCard = nameOnTheCard; }
 
-    public int getCardNumber() { return cardNumber; }
+    public String getCardNumber() {
+        return cardNumber;
+    }
 
-    public void setCardNumber(int cardNumber) { this.cardNumber = cardNumber; }
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
 
-    public int getCvc() { return cvc; }
+    public String getCvc() {
+        return cvc;
+    }
 
-    public void setCvc(int cvc) { this.cvc = cvc; }
+    public void setCvc(String cvc) {
+        this.cvc = cvc;
+    }
 }
