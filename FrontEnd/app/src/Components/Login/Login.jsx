@@ -24,7 +24,8 @@ export default class Login extends Component {
 
     componentDidMount() {
         
-    }  handleChange(event) {  
+    }  
+    handleChange(event) {  
     this.setState({
       [event.target.name]: event.target.value,
       

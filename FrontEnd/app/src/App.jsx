@@ -18,6 +18,7 @@ import ReviewTable from './Components/Reviewer/ReviewTable';
 import Payment from './Components/Payment/Payment';
 import Userprofile from './Components/Userprofile/UserProfile';
 import Navbarnew from './Components/NavbarNew/NavbarNew';
+import Logout from './Components/Logout/Logout';
 
 export default class App extends Component {
     constructor(props) {
@@ -44,6 +45,8 @@ export default class App extends Component {
                         <Route exact path='/contactUs' component={ReviewTable} />
                         <Route exact path='/payment' component={Payment} />
                         <Route exact path='/userprofile' component={Userprofile} />
+                        <Route exact path='/logout' component={Logout} />
+
 
 
 
