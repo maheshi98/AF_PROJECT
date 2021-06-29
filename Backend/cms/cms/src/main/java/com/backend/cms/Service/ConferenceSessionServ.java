@@ -1,6 +1,6 @@
 package com.backend.cms.Service;
 
-import com.backend.cms.Repository.ConferenceRepo;
+import com.backend.cms.Repository.ConferenceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class ConferenceSessionServ {
 
     @Autowired
-    public ConferenceRepo conferenceRepo;
+    public ConferenceRepository conferenceRepository;
 
 }
 

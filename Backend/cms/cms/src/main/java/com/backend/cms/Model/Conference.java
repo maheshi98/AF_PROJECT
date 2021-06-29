@@ -3,6 +3,8 @@ package com.backend.cms.Model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Document(collection = "conference")
 public class Conference {
     @Id
@@ -10,17 +12,22 @@ public class Conference {
     private String confTopic;
     private String confDate;
     private String confDescription;
+    private List researchPapers;
+    private List workshops;
     private ConferenceSession conferenceSession;
     private String approveStatus;
 
     public Conference() {
     }
 
-    public Conference(String confId, String confTopic, String confDate, String confDescription, String approveStatus) {
+    public Conference(String confId, String confTopic, String confDate, String confDescription, List researchPapers, List workshops, ConferenceSession conferenceSession, String approveStatus) {
         this.confId = confId;
         this.confTopic = confTopic;
         this.confDate = confDate;
         this.confDescription = confDescription;
+        this.researchPapers = researchPapers;
+        this.workshops = workshops;
+        this.conferenceSession = conferenceSession;
         this.approveStatus = approveStatus;
     }
 
@@ -54,6 +61,22 @@ public class Conference {
 
     public void setConfDescription(String confDescription) {
         this.confDescription = confDescription;
+    }
+
+    public List getResearchPapers() {
+        return researchPapers;
+    }
+
+    public void setResearchPapers(List researchPapers) {
+        this.researchPapers = researchPapers;
+    }
+
+    public List getWorkshops() {
+        return workshops;
+    }
+
+    public void setWorkshops(List workshops) {
+        this.workshops = workshops;
     }
 
     public ConferenceSession getConferenceSession() {
