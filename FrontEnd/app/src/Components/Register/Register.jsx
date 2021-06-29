@@ -36,6 +36,16 @@ export default class Register extends Component {
         
           return;
         }
+
+        if(this.state.username == null){
+          alert("Username cannot be empty !");
+          return;
+        }
+        if(this.state.email == null){
+          alert("Email cannot be empty !");
+          return;
+        }
+
         
     }
     handleRadioGender(event){
@@ -71,7 +81,7 @@ export default class Register extends Component {
       console.log('User =>' + JSON.stringify(user));
 
       RegisterUserService.addCustomer(user).then(res => {
-        this.props.history.push("/login")
+        this.props.history.push("/payment")
     });
 
     }
@@ -85,30 +95,32 @@ export default class Register extends Component {
          <div style={{paddingLeft : '6cm', alignContent:'center', width:'25cm'}}>
            <div  style={{ alignContent:'center', width:'25cm'}}>
              <Card  variant ="dark" style={{alignContent:'center', width:'28cm'}}>
-             <Card.Header size="5"  variant ="dark" style={{  backgroundColor: 'black' , paddingLeft:'9.5cm', alignContent:'center', width:'28cm',fontSize :'30px', fontFamily : 'bold', color: "white"}}>Create Your Own Account </Card.Header>
-              <div className = "card-body" style={{ alignContent:'center', width:'25cm'}}>
+                   <div className='section-title text-center'>
+                        <h3>Sign UP</h3>
+                    </div>              
+                    <div className = "card-body" style={{ alignContent:'center', width:'25cm'}}>
           <form method="POST" onSubmit= {this.handleSubmit} style={{ alignContent:'center', width:'25cm'}} >
           <div className="form-group row" style={{ alignContent:'center', width:'25cm'}}>
                <label  className="col-sm-2 col-form-label">Name</label>
                <div className="col-sm-5">
-                 <input type="text" name="firstname" value={this.state.firstname} className="form-control" onChange={this.handleChange} placeholder="   First Name"></input>
+                 <input type="text" name="firstname" value={this.state.firstname} className="form-control" onChange={this.handleChange} placeholder="Jone" required></input>
                  
                </div>
                <div className="col-sm-5">
-               <input type="text"  name="lastname" value={this.state.lastname} className="form-control" onChange={this.handleChange} placeholder ="   Last Name" />
+               <input type="text"  name="lastname" value={this.state.lastname} className="form-control" onChange={this.handleChange} placeholder ="Dohe" required />
                </div>
            </div>
            <div className="form-group row">
                <label className="col-sm-2 col-form-label">Email<span class="required"><font size="5">*</font></span></label>
                <div className="col-sm-10">
-                 <input type="email"  size="25" name="email" value={this.state.email}  className="form-control" onChange={this.handleChange} placeholder="   name@example.com" required/>
+                 <input type="email"  size="25" name="email" value={this.state.email}  className="form-control" onChange={this.handleChange} placeholder="name@example.com" required/>
                </div>
                
            </div>
            <div className="form-group row">
-               <label className="col-sm-2 col-form-label">UserName</label>
+               <label className="col-sm-2 col-form-label">User Name</label>
                <div className="col-sm-10">
-               <input type="text" value={this.state.username} name="username"className="form-control"  onChange={this.handleChange}  />
+               <input type="text" value={this.state.username} name="username"className="form-control"  onChange={this.handleChange}  placeholder="name@example.com" required />
                </div>
              
            </div>
