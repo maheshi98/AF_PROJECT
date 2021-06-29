@@ -1,4 +1,4 @@
-/*import React, { Component } from 'react'
+import React, { Component } from 'react'
 import './Login.css';
 import Button from 'react-bootstrap/Button';
 import RegisterUserService from '../../Services/RegisterUserService';
@@ -34,12 +34,12 @@ export default class Login extends Component {
 }
 shoot(event){
   //console.log(this.state.email , this.state.password);
- /* UserService.getUserById(this.state.email).then(res => {
+ UserService.getUserById(this.state.email).then(res => {
     let user = res.data;
     console.log('User => ' + JSON.stringify(user));
     this.props.history.push("/CustomerProfile")
-});*/
-  /*  event.preventDefault();
+});
+    event.preventDefault();
 
     RegisterUserService.getUserByIdOptional(this.state.email).then(res => {
       this.state.isFound = true;
@@ -82,7 +82,7 @@ shoot(event){
 
           }else if(user.roleId == "Workshop Conductor"){
             this.state.isFound = true;
-            this.props.history.push('/');
+            this.props.history.push('/add-workshop');
             window.sessionStorage.setItem("RoleType","Workshop Conductor");
           }
           else if(user.roleId == "Researcher"){
@@ -100,7 +100,7 @@ shoot(event){
         else if(user.role == "EDITOR"){
           window.sessionStorage.setItem("UserRole","EDITOR");
           this.state.isFound = true;
-          this.props.history.push('/');
+          this.props.history.push('/conference');
           window.sessionStorage.setItem("UserRole","EDITOR");
         }
         else if(user.role == "REVEIWER"){
@@ -158,4 +158,4 @@ shoot(event){
         )
     }
 }
-*/
+
