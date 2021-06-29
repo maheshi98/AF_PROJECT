@@ -15,6 +15,7 @@ import ConferenceAdmin from './Components/Conference/ConferenceAdmin/ViewConfere
 import CreateConference from './Components/Conference/ConferenceAdmin/CreateConference/CreateConference';
 import UploadResearch from './Components/ResearchPaper/UploadResearch';
 import ReviewTable from './Components/Reviewer/ReviewTable';
+import Contact from './Components/ContactUs/Contact';
 
 export default class App extends Component {
     constructor(props) {
@@ -36,9 +37,9 @@ export default class App extends Component {
                         <Route exact path='/conference-admin' component={ConferenceAdmin} />
                         <Route exact path='/create-conference' component={CreateConference} />
                         <Route exact path='/committee' component={Committee} />
-                        <Route exact path='/past-proceedings' component={PastProceedings} />
+                        <Route exact path='/past-proceedings' component={PastProceedings} /> 
                         <Route exact path='/research-paper' component={UploadResearch} />
-                        <Route exact path='/contactUs' component={ReviewTable} />
+                        <Route exact path='/contactUs' component={Contact} />
                     </Switch>
                 </BrowserRouter>
                 <Footer />
