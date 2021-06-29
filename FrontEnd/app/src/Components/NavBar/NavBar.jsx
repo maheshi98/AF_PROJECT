@@ -122,11 +122,15 @@ export default class NavBar extends Component {
                 text: "Contact us",
                 details: []
             },
-            {
-                link: "/contactUs",
-                text: "Dashboard",
-                details: []
-            }
+
+           
+                {
+                    link: "/contactUs",
+                    text: "Dashboard",
+                    details: []
+                }
+            
+           
         ];
 
         return (

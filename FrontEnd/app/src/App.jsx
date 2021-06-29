@@ -14,6 +14,9 @@ import workshopList from './Components/Workshops/WorkshopList/workshopList';
 //TODO: remove if no need
 import ConferenceAdmin from './Components/Conference/ConferenceAdmin/ViewConference/ViewConference';
 import CreateConference from './Components/Conference/ConferenceAdmin/CreateConference/CreateConference';
+import UploadResearch from './Components/ResearchPaper/UploadResearch';
+import ReviewTable from './Components/Reviewer/ReviewTable';
+import Payment from './Components/Payment/Payment';
 
 export default class App extends Component {
     constructor(props) {
@@ -38,6 +41,9 @@ export default class App extends Component {
                         <Route exact path='/past-proceedings' component={PastProceedings} />
                         <Route exact path='/add-workshop' component={addWorkshop} />
                         <Route exact path='/workshops' component={workshopList} />
+                        <Route exact path='/research-paper' component={UploadResearch} />
+                        <Route exact path='/contactUs' component={ReviewTable} />
+                        <Route exact path='/payment' component={Payment} />
                     </Switch>
                 </BrowserRouter>
                 <Footer />

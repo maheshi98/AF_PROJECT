@@ -124,7 +124,8 @@ shoot(event){
 
    
 
-    render() {
+    render()
+     {
         return (
             <div className="bg-img">
         <div className="content">
@@ -148,12 +149,6 @@ shoot(event){
           </form>
           <div className="login">Or login with</div>
           <div className="links">
-            <div className="facebook">
-              <i className="fab fa-facebook-f"><span>Facebook</span></i>
-            </div>
-            <div className="instagram">
-              <i className="fab fa-instagram"><span>Instagram</span></i>
-            </div>
           </div>
           <div className="signup">Don't have account?
             <a href="#">Signup Now</a>
