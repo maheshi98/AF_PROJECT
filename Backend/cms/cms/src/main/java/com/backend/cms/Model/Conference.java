@@ -14,20 +14,18 @@ public class Conference {
     private String confDescription;
     private List researchPapers;
     private List workshops;
-    private ConferenceSession conferenceSession;
     private String approveStatus;
 
     public Conference() {
     }
 
-    public Conference(String confId, String confTopic, String confDate, String confDescription, List researchPapers, List workshops, ConferenceSession conferenceSession, String approveStatus) {
+    public Conference(String confId, String confTopic, String confDate, String confDescription, List researchPapers, List workshops, String approveStatus) {
         this.confId = confId;
         this.confTopic = confTopic;
         this.confDate = confDate;
         this.confDescription = confDescription;
         this.researchPapers = researchPapers;
         this.workshops = workshops;
-        this.conferenceSession = conferenceSession;
         this.approveStatus = approveStatus;
     }
 
@@ -77,14 +75,6 @@ public class Conference {
 
     public void setWorkshops(List workshops) {
         this.workshops = workshops;
-    }
-
-    public ConferenceSession getConferenceSession() {
-        return conferenceSession;
-    }
-
-    public void setConferenceSession(ConferenceSession conferenceSession) {
-        this.conferenceSession = conferenceSession;
     }
 
     public String getApproveStatus() {

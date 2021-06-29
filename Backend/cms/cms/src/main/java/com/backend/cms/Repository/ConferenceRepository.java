@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface ConferenceRepository extends MongoRepository<Conference,String> {
     List<Conference> findByApproveStatus(String approveStatus);
+    Conference findByConfId(String confId);
 }

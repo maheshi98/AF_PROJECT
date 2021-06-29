@@ -61,5 +61,17 @@ public class ConferenceService {
     public List<Conference> getConferenceByStatus(String status){
         return conferenceRepository.findByApproveStatus(status);
     }
+
+    /**
+     * @description Change status by Conference
+     * @param id
+     * @param status
+     * @memberof ConferenceService
+     */
+    public void changeStatusByConference(String id, String status) {
+        Conference conference = conferenceRepository.findByConfId(id);
+        conference.setApproveStatus(status);
+        conferenceRepository.save(conference);
+    }
 }
 
