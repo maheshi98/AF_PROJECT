@@ -104,10 +104,15 @@ export default class NavBar extends Component {
                 link: "/logout",
                 text: "Log Out",
                 details: []
+            },
+            {
+                link: "/contactUs",
+                text: "Dashboard",
+                details: []
             }
         ];
 
-        const nav_length =  pages.length;
+        const nav_length = pages.length;
 
         return (
             <Navbar fixed="top" bg="dark" expand="lg" style={{ top: 0, position: 'sticky' }}>
