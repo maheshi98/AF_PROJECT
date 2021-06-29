@@ -16,6 +16,7 @@ import CreateConference from './Components/Conference/ConferenceAdmin/CreateConf
 import UploadResearch from './Components/ResearchPaper/UploadResearch';
 import ReviewTable from './Components/Reviewer/ReviewTable';
 import Contact from './Components/ContactUs/Contact';
+import Payment from './Components/Payment/Payment';
 
 export default class App extends Component {
     constructor(props) {
@@ -25,7 +26,7 @@ export default class App extends Component {
  
     render() {
         return (
-            <div>
+            <div className= "body">
                 <NavBar />
                 <BrowserRouter>
                     <Switch>
@@ -40,6 +41,8 @@ export default class App extends Component {
                         <Route exact path='/past-proceedings' component={PastProceedings} /> 
                         <Route exact path='/research-paper' component={UploadResearch} />
                         <Route exact path='/contactUs' component={Contact} />
+                        <Route exact path='/payment' component={Payment} />
+                        <Route exact path='/review' component={ReviewTable} />
                     </Switch>
                 </BrowserRouter>
                 <Footer />
