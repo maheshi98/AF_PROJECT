@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Button from "react-bootstrap/Button";
 import{Form , Card}  from 'react-bootstrap'
-import 'fa-icons';
 import RegisterUserService from '../../Services/RegisterUserService';
 
 export default class Register extends Component {
