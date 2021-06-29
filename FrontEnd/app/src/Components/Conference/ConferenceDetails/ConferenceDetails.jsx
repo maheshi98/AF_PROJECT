@@ -19,7 +19,6 @@ const initialState = {
 export default class ConferenceDetails extends Component {
     constructor(props) {
         super(props);
-        // this.getAllApprovedConference = this.getAllApprovedConference.bind(this);
         this.getConference = this.getConference.bind(this);
         this.state = initialState;
     }
@@ -44,43 +43,6 @@ export default class ConferenceDetails extends Component {
 
         console.log("id of conference", this.state.conferenceDetails);
     }
-
-
-    getAllWorkshops = () => {
-        axios.get('http://localhost:8080/workshop/')
-            .then(response => {
-                this.setState({ categories: response.data.data }, () => {
-                    let data = [];
-                    this.state.categories.map((item, index) => {
-                        let category = {
-                            value: item._id,
-                            label: item.name
-                        }
-                        data.push(category)
-                    });
-                    this.setState({ category_options: data });
-                })
-            })
-    }
-
-    /**
-    * @description This method retrieve all approved Conference
-    * @memberof ConferenceDetails
-    */
-    // getAllApprovedConference() {
-    //     const callbackFn = (result) => {
-    //         const { data, error } = result;
-    //         console.log("data", data);
-    //         if (data) {
-    //             this.setState({ approvedConferences: data });
-    //         }
-    //         if (error) {
-    //             console.log(error);
-    //         }
-    //     }
-    //     {/** Calling function to retrieve data */ }
-    //     getApprovedConferenceFn(callbackFn);
-    // }
 
     render() {
         console.log("conference details", this.state.conferenceDetails);
@@ -109,6 +71,7 @@ export default class ConferenceDetails extends Component {
                         <div className="container">
                             <div className='section-title text-center'>
                                 <h3>Publications</h3>
+                                {/* TODO: */}
                             </div>
                             <hr />
                             <div className='section-title text-center'>

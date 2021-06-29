@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CardDeck, Card, Button, CardColumns } from 'react-bootstrap';
 import './Conference.css';
 import PageTitle from '../PageTitle/PageTitle';
+import NotFound from '../NotFound/NotFound';
 import { getApprovedConferenceFn } from '../../BizLogic';
 
 const initialState = {
@@ -76,6 +77,7 @@ export default class Conference extends Component {
                                     )
                                 }
                             </CardColumns>
+                            {/* <NotFound /> */}
                         </div>
                     </div>
                 </div>

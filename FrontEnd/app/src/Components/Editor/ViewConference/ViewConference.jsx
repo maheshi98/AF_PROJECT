@@ -1,28 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Table, Badge } from 'react-bootstrap';
-import { RiDeleteBin5Line } from "react-icons/ri"; 
-import { FiEdit } from "react-icons/fi";
+import { RiDeleteBin5Line } from "react-icons/ri";
+// import { FiEdit } from "react-icons/fi";
 import Select from 'react-select';
-import { getAllConferenceFn } from '../../../BizLogic';
+import { getAllConferenceFn, changeStatusFn, deleteConferenceFn } from '../../../BizLogic';
 import './ViewConference.css';
 
 const initialState = {
-    // confTopic: '',
-    // confDate: '',
-    // confDescription: '',
-    // approveStatus: false,
-    // researchPapers: [],
-    // researchPapersOptions: [],
-    // selectedResearchPapers: [],
-    // workshops: [],
-    // workshopOptions: [],
     conferences: []
 }
 export default class ViewConference extends Component {
     constructor(props) {
         super(props);
         this.getAllConference = this.getAllConference.bind(this);
+        this.changeStatus = this.changeStatus.bind(this);
         this.state = initialState;
     }
 
@@ -49,37 +41,33 @@ export default class ViewConference extends Component {
         getAllConferenceFn(callbackFn);
     }
 
-    // viewRequest(id) {
-    //     this.props.history.push("/RequestView/" + id);
-    // }
+    /**
+    * @description Change status of conference
+    * @memberof ViewConference
+    */
+    changeStatus = (e, id) => {
+        console.log("change status", e.label, id);
+        changeStatusFn(id, e.label);
+    }
 
-    // deleteVehicle(id) {
-    //     VehicleDataService.delete(id)
-    //         .then(response => {
-    //             this.setState({
-    //                 vehicles: this.state.vehicles.filter(vehicle => vehicle.id !== id),
-    //                 message: "Successfully Deleted."
-    //             });
-    //             console.log(response.data);
-    //             alert("Do you really want to delete?")
-    //         })
-    //         .catch(e => {
-    //             console.log(e)
-    //             this.setState({
-    //                 message: "Can't delete."
-    //             });
-    //         })
-    // }
+    /**
+    * @description Change status of conference
+    * @memberof ViewConference
+    */
+    deleteConference(id) {
+        console.log("change status", id);
+        deleteConferenceFn(id);
+    }
 
     render() {
         const actions = [
             { value: 'Approved', label: 'Approved' },
-            { value: 'Not Approved', label: 'Not Approved' },
+            { value: 'Declined', label: 'Declined' },
             { value: 'Pending', label: 'Pending' }
         ]
 
         return (
-            <div className=''>
+            <div className='container'>
                 <div id='viewConference'>
                     <div class="text-right">
                         <Link to='/create-conference'> <Button style={{ marginBottom: 20 }} variant="secondary" >Create Conference</Button></Link>
@@ -94,7 +82,7 @@ export default class ViewConference extends Component {
                                 <th width={'15%'} >Research Papers</th>
                                 <th width={'15%'} >Workshops</th>
                                 <th>Status</th>
-                                <th>Edit</th>
+                                {/* <th>Edit</th> */}
                                 <th>Delete</th>
                                 <th width={'20%'} >Action</th>
                             </tr>
@@ -114,6 +102,7 @@ export default class ViewConference extends Component {
                                                 }
                                             </ul>
                                         </td>
+                                        {/* TODO: add workshops*/}
                                         <td>Workshops</td>
                                         <td>
                                             <Badge pill variant={
@@ -122,13 +111,22 @@ export default class ViewConference extends Component {
                                                 {conference.approveStatus}
                                             </Badge>
                                         </td>
-                                        <td><FiEdit size={30} style={{ textAlign: "center", color: "blue" }} /></td>
-                                        <td><RiDeleteBin5Line size={30} style={{ textAlign: "center", color: "red"}}/></td>
+                                        {/* <td>
+                                            <FiEdit
+                                                size={30}
+                                                style={{ textAlign: "center", color: "blue" }} />
+                                        </td> */}
+                                        <td>
+                                            <button style={{ border: "none" }} >
+                                                <RiDeleteBin5Line
+                                                    onClick={() => this.deleteConference(conference.confId)}
+                                                    size={30}
+                                                    style={{ textAlign: "center", color: "red" }} />
+                                            </button></td>
                                         <td>
                                             <Select
                                                 options={actions}
-                                                // onChange={this.onResearchPapersSelect}
-                                                className="basic-multi-select"
+                                                onChange={e => this.changeStatus(e, conference.confId)}
                                             />
                                         </td>
                                     </tr>
