@@ -14,6 +14,10 @@ class ConferenceService {
         return http.post("/conference/create", data);
     }
 
+    approvedConference() {
+        return http.get("/conference/approvedConference");
+    }
+
     // update(id, data) {
     //     return http.put(`/Requests/${id}`, data);
     // }
@@ -24,10 +28,6 @@ class ConferenceService {
 
     // deleteAll() {
     //     return http.delete(`/Requests`);
-    // }
-
-    // findByTitle(title) {
-    //     return http.get(`/Requests?title=${title}`);
     // }
 }
 
