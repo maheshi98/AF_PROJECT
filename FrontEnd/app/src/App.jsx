@@ -17,6 +17,7 @@ import UploadResearch from './Components/ResearchPaper/UploadResearch';
 import ReviewTable from './Components/Reviewer/ReviewTable';
 import Payment from './Components/Payment/Payment';
 import Userprofile from './Components/Userprofile/UserProfile';
+import Navbarnew from './Components/NavbarNew/NavbarNew';
 
 export default class App extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ export default class App extends Component {
     render() {
         return (
             <div className= "body">
-                <NavBar />
+                <Navbarnew />
                 <BrowserRouter>
                     <Switch>
                         <Route exact path='/' component={HomePage} />
