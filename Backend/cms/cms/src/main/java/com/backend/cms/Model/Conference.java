@@ -11,12 +11,12 @@ public class Conference {
     private String confDate;
     private String confDescription;
     private ConferenceSession conferenceSession;
-    private Boolean approveStatus;
+    private String approveStatus;
 
     public Conference() {
     }
 
-    public Conference(String confId, String confTopic, String confDate, String confDescription, Boolean approveStatus) {
+    public Conference(String confId, String confTopic, String confDate, String confDescription, String approveStatus) {
         this.confId = confId;
         this.confTopic = confTopic;
         this.confDate = confDate;
@@ -64,11 +64,11 @@ public class Conference {
         this.conferenceSession = conferenceSession;
     }
 
-    public Boolean getApproveStatus() {
+    public String getApproveStatus() {
         return approveStatus;
     }
 
-    public void setApproveStatus(Boolean approveStatus) {
+    public void setApproveStatus(String approveStatus) {
         this.approveStatus = approveStatus;
     }
 }

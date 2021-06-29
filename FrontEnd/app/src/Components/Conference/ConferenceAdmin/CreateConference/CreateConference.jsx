@@ -10,7 +10,7 @@ const initialState = {
     confTopic: '',
     confDate: '',
     confDescription: '',
-    approveStatus: false,
+    approveStatus: "pending",
     researchPapers: [],
     researchPapersOptions: [],
     selectedResearchPapers: [],
@@ -20,7 +20,6 @@ const initialState = {
 }
 
 export default class CreateConference extends Component {
-
     constructor(props) {
         super(props);
         this.onChange = this.onChange.bind(this);
@@ -132,13 +131,7 @@ export default class CreateConference extends Component {
             approveStatus: this.state.approveStatus
         };
         console.log("CONFERENCE REQUEST TO CREATE: ", conference);
-        const message = createConferenceFn(conference);
-
-        return (
-            <Alert variant='success'>
-                {message}
-            </Alert>
-        )
+        createConferenceFn(conference);
     }
 
     render() {
