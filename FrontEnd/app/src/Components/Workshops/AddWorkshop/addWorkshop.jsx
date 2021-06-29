@@ -122,7 +122,7 @@ export default class addWorkShop extends Component {
   }
 
   render() {
-    const { selectedFiles, currentFile, progress, message, fileInfos, } = this.state;
+    const { selectedFiles, currentFile, progress, message, fileInfos } = this.state;
     return (
       <div className='container'>
         <div id='createWorkshop'>
