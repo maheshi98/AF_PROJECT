@@ -13,7 +13,7 @@ export default class NavBar extends Component {
     renderNavBar = (index, item) => {
         console.log("renderNavBar :: index, item", index, item);
         return (
-            <Nav.Link key={index} href={item.link} style={{ paddingLeft: 20, fontSize: 18, color: 'black' }}>{item.text}</Nav.Link>
+            <Nav.Link key={index} href={item.link} style={{ paddingLeft: 20, fontSize: 18, color: 'white' }}>{item.text}</Nav.Link>
         )
     }
 
@@ -110,7 +110,7 @@ export default class NavBar extends Component {
         const nav_length =  pages.length;
 
         return (
-            <Navbar fixed="top" bg="light" expand="lg" style={{ top: 0, position: 'sticky' }}>
+            <Navbar fixed="top" bg="dark" expand="lg" style={{ top: 0, position: 'sticky' }}>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto" style={{ paddingLeft: 150 }}>
