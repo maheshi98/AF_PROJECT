@@ -5,7 +5,7 @@
 	position: relative;
 	margin-top: 10px;
 	margin-bottom: 15px;
-	padding-bottom: 15px;
+	/* padding-bottom: 15px; */
     text-transform: uppercase;
 }
 .section-title h2::after {
