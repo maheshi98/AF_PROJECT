@@ -32,20 +32,16 @@ public class UserController {
     }
 
     @PutMapping("/updateUser/{id}")
-    public ResponseEntity <User> updateUser(@PathVariable(value = "id") String id, @RequestBody User userDetails)  {
+    public User updateUser(@PathVariable(value = "id") String id, @RequestBody User userDetails)  {
         Optional<User> userData =  userRepository.findById(id);
-
-        if(userData.isPresent()){
             User user = userData.get();
 
          user.setFirstname(userDetails.getFirstname());
          user.setLastname(userDetails.getLastname());
          user.setEmail(userDetails.getEmail());
+         user.setUsername(userDetails.getUsername());
          user.setRole(userDetails.getRole());
-         return new ResponseEntity<>(userRepository.save(user), HttpStatus.OK);
-        }else{
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+         return  userRepository.save(user);
 
     }
 

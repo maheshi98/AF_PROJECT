@@ -95,7 +95,7 @@ shoot(event){
         else if(user.role == "ADMIN"){
           window.sessionStorage.setItem("UserRole","ADMIN");
           this.state.isFound = true;
-          this.props.history.push('/');
+          this.props.history.push('/adminHome');
           window.sessionStorage.setItem("UserRole","ADMIN");
         }
         else if(user.role == "EDITOR"){
