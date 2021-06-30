@@ -48,7 +48,7 @@ class ImportantDates extends Component {
                                     <div className='date'>
                                         <div className='date-content'>
                                             <h3>{item.description}</h3>
-                                            <p>Hellow world submit document here.</p>
+                                            <p>You can submit your papers by registering <a href="/register" style={{color: "blue"}}>here.</a></p>
                                             <div className='date-meta'>{item.date}</div>
                                         </div>
                                     </div>
