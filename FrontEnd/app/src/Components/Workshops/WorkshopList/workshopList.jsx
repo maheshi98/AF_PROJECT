@@ -54,7 +54,7 @@ export default class workshopList extends Component {
     const { workshops } = this.state;
 
     return (
-      <div className="container">
+      <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
      <h1>Workshop Details</h1>
             <Table striped bordered hover>
                 <thead>

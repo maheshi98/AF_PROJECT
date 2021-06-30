@@ -70,7 +70,7 @@ export default class ReviewTable extends Component {
 
     return (
 
-    <div className='container'>
+    <div >
     <div class="row justify-content-center align-items-center">
     <div id='createConference'>
                     <div className='section-title text-center'>

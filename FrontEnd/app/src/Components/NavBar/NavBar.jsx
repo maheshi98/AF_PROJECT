@@ -124,14 +124,22 @@ export default class NavBar extends Component {
                     <Nav.Link href="#pricing"></Nav.Link>
                     <Nav.Link href="#pricing">Contact us</Nav.Link>
                     </Nav>
+                    <Nav id="navbar" className="me-auto" style={{ fontSize: "18px", paddingLeft: "25cm" }}>
+                        <Navbar.Brand href="/userprofile">
+                            <img
+                                src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                alt="Admin" className="rounded-circle"
+                                width={50} />
+                        </Navbar.Brand>
+                    </Nav>
                 </Navbar.Collapse>
-                <Navbar.Brand href="/">
+                {/* <Navbar.Brand href="/">
                     <img
                         src={logo}
                         width="70"
                         height="70"
                         className="d-inline-block align-top" />
-                </Navbar.Brand>
+                </Navbar.Brand> */}
             </Navbar>
         );
     }
