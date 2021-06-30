@@ -71,7 +71,12 @@ export default class ConferenceDetails extends Component {
                         <div className="container">
                             <div className='section-title text-center'>
                                 <h3>Publications</h3>
-                                {/* TODO: */}
+                                <ul>
+                                    {this.state.conferenceDetails.researchPapers.map((item) => (
+                                        <li>{item.label}</li>
+                                    ))
+                                    }
+                                </ul>
                             </div>
                             <hr />
                             <div className='section-title text-center'>
