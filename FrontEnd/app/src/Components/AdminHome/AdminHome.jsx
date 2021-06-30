@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import ViewConference from '../Editor/ViewConference/ViewConference'
+// import ViewConference from '../Editor/ViewConference/ViewConference'
+import ViewConference from './ConferenceAdmin/ConferenceAdmin'
 import workshopList from '../Workshops/WorkshopList/workshopList'
 import ConferenceDetails from '../Conference/ConferenceDetails/ConferenceDetails'
 

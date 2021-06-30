@@ -71,16 +71,38 @@ export default class ConferenceDetails extends Component {
                         <div className="container">
                             <div className='section-title text-center'>
                                 <h3>Publications</h3>
-                                <ul>
+                                <br />
+                                <div class="row">
                                     {this.state.conferenceDetails.researchPapers.map((item) => (
-                                        <li>{item.label}</li>
+                                        <div class="column">
+                                            <div class="card">
+                                                <h5>Paper Topic</h5>
+                                                <p>{item.label}</p>
+                                                <h5>Paper Topic</h5>
+                                                <p>{item.name}</p>
+                                            </div>
+                                        </div>
                                     ))
                                     }
-                                </ul>
+                                </div>
                             </div>
                             <hr />
                             <div className='section-title text-center'>
                                 <h3>Workshops</h3>
+                            </div>
+                            <br />
+                            <div class="row">
+                                {this.state.conferenceDetails.workshops.map((item) => (
+                                    <div class="column">
+                                        <div class="card">
+                                            <h5>Workshop Title</h5>
+                                            <p>{item.label}</p>
+                                            <h5>Time</h5>
+                                            <p>{item.time}</p>
+                                        </div>
+                                    </div>
+                                ))
+                                }
                             </div>
                         </div>
                         <br /><br />

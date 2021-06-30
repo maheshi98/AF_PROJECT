@@ -12,8 +12,7 @@ import Committee from './Components/Committee/Committee';
 import PastProceedings from './Components/PastProceedings/PastProceedings';
 import addWorkshop from './Components/Workshops/AddWorkshop/addWorkshop';
 import workshopList from './Components/Workshops/WorkshopList/workshopList';
-//TODO: remove if no need
-import ConferenceAdmin from './Components/Editor/ViewConference/ViewConference';
+import ConferenceAdmin from './Components/Editor/ViewConference';
 import CreateConference from './Components/Editor/CreateConference/CreateConference';
 import UploadResearch from './Components/ResearchPaper/UploadResearch';
 import Contact from './Components/ContactUs/Contact';
@@ -21,7 +20,7 @@ import Payment from './Components/Payment/Payment';
 import ReviewerDashboard from './Components/Reviewer/ReviewerDashboard';
 import ReviewTable from './Components/Reviewer/ReviewTable';
 import Userprofile from './Components/Userprofile/UserProfile';
-import Navbarnew from './Components/NavbarNew/NavbarNew';
+import Navbarnew from './Components/Navbar/Navbar';
 import Logout from './Components/Logout/Logout';
 import Adminhome from './Components/AdminHome/AdminHome';
 
@@ -57,8 +56,6 @@ export default class App extends Component {
                         <Route exact path='/userprofile' component={Userprofile} />
                         <Route exact path='/logout' component={Logout} />
                         <Route exact path='/adminHome' component={Adminhome} />
-
-
                     </Switch>
                 </BrowserRouter>
                 <Footer />
