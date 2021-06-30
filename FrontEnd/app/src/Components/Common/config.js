@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const api = 'http://localhost:8811';
+const api = 'http://localhost:8080';
 
 
     export const CommonGet = (controller, queryString) => {

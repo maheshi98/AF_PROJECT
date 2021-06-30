@@ -45,7 +45,8 @@ export default class UploadResearch extends Component {
           "email":this.state.email ,
           "contact_no":this.state.contact_no ,
           "title":this.state.title ,
-          "pdf":this.state.pdf
+          "pdf":this.state.pdf,
+          "status":"pending"
       }
       CommonPost('researchers/saveReseachppr', formData)
       .then(res => res.json())
@@ -122,6 +123,7 @@ export default class UploadResearch extends Component {
                                         onChange={this.handleOnChange}
                                     />
                                 </Form.Group>
+
                                 <br />
                                 <Form.Group>
                                     <Button type="submit" style={{ backgroundColor: '#37474F', paddingRight: 10 }} onClick={this.handleOnClick}>Submit </Button> {''}
