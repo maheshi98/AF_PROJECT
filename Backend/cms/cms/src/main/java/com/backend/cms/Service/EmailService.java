@@ -9,8 +9,11 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+
+import java.util.Properties;
 
 //import com.bravo.store_managemt_system.model.Researchppr;
 
@@ -18,29 +21,54 @@ import org.springframework.stereotype.Service;
 public class EmailService {
     private JavaMailSender javaMailSender ;
 
-    @Autowired
-    public EmailService(JavaMailSender javaMailSender){
-        this.javaMailSender = javaMailSender;
-    }
+//    @Autowired
+//    public EmailService(JavaMailSender javaMailSender){
+//        this.javaMailSender = javaMailSender;
+//    }
 
-    public void sendEmail(ResearchPpr researchPpr) throws MailException{
+    public void sendEmail(ResearchPpr rr) throws MailException{
+
+
+        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+        mailSender.setHost("smtp.gmail.com");
+        mailSender.setPort(465);
+        mailSender.setUsername("shoe50048@gmail.com");
+        mailSender.setPassword("shoe@1234");
+
+        Properties properties = new Properties();
+        properties.setProperty("mail.smtp.auth", "true");
+
+        properties.setProperty("mail.smtp.auth", "true");
+        properties.setProperty("mail.smtp.ssl.trust", "smtp.gmail.com");
+        properties.setProperty("mail.smtp.starttls.enable", "true");
+        properties.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        properties.setProperty("javax.net.ssl.SSLSocketFactory", "false");
+        properties.setProperty("javax.net.ssl.SSLSocketFactory", "false");
+
+        mailSender.setJavaMailProperties(properties);
+
+
+
+
         SimpleMailMessage smm = new SimpleMailMessage();
-        smm.setTo(researchPpr.getEmail());
-        smm.setFrom("shoe50048@gmail.com");
-        smm.setSubject("Research Paper Status");
+        smm.setTo(rr.getEmail());
+        smm.setSubject("Resaerch Paper whatever");
 
         String emailBody = "Congratulations! \n" +
                 "\n" +
-                "Your Research Paper is Approved\n" +
+                "We are happy to announce that you have been promoted as an Store Manager in our Online Shopping Store. Please Use this login Credential to log as the Store Manager.\n" +
                 "\n" +
                 "\n" +
-                "Email :- " +researchPpr.getEmail() + "\n" +
+                "Email :- " +rr.getEmail() + "\n" +
+                "\n" +
+                "Password :- " +"gg" +"\n" +
+                "\n" +
                 "\n" +
                 "Thank you. ";
 
 
         smm.setText(emailBody);
 
-        javaMailSender.send(smm);
+        mailSender.send(smm);
     }
 }
