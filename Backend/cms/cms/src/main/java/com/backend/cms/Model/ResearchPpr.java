@@ -15,6 +15,18 @@ public class ResearchPpr {
     public String pdf;
     public String status;
 
+//    public ResearchPpr(String id,String name, String email,String contact_no, String title,
+//                    String pdf, String status) {
+//        super();
+//        this.id = id;
+//        this.name = name;
+//        this.email = email;
+//        this.contact_no = contact_no;
+//        this.title = title;
+//        this.pdf = pdf;
+//        this.status = status;
+//    }
+
     public String getId() {
         return id;
     }
@@ -70,4 +82,10 @@ public class ResearchPpr {
     public void setStatus(String status) {
         this.status = status;
     }
+
+//    @Override
+//    public String toString() {
+//        return "ResearchPaperID" + id + ", name=" + name + ", email=" + email + ",contact_no=" + contact_no +
+//                ", title=" + title + ", pdf=" + pdf + ", status=" + status + "]";
+//    }
 }

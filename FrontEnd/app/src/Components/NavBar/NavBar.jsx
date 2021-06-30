@@ -60,16 +60,16 @@ export default class NavBar extends Component {
                 text: "Keynotes",
                 details: []
             },
-            {
-                link: "/add-workshop",
-                text: "Workshop",
-                details: [  ]
-            },
-            {
-                link: "/workshops",
-                text: "Workshops",
-                details: [  ]
-            },
+            // {
+            //     link: "/add-workshop",
+            //     text: "Workshop",
+            //     details: [  ]
+            // },
+            // {
+            //     link: "/workshops",
+            //     text: "Workshops",
+            //     details: [  ]
+            // },
             {
                 link: "/user-workshops",
                 text: "UserWorkshop",

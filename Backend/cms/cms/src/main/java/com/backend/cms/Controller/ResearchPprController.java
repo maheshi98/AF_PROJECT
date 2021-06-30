@@ -20,6 +20,7 @@ public class ResearchPprController {
 
     @RequestMapping(value = "/saveReseachppr", method = RequestMethod.POST)
     public ResearchPpr test(@RequestBody ResearchPpr researchPpr){
+
         return res.saveResearch(researchPpr);
     }
 

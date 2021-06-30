@@ -87,7 +87,7 @@ export default class Login extends Component {
           }
           else if (user.roleId == "Researcher") {
             this.state.isFound = true;
-            this.props.history.push('/');
+            this.props.history.push('/research-paper');
             window.sessionStorage.setItem("RoleType", "Researcher");
           }
         }
@@ -103,11 +103,11 @@ export default class Login extends Component {
           this.props.history.push('/conference');
           window.sessionStorage.setItem("UserRole","EDITOR");
         }
-        else if (user.role == "REVEIWER") {
-          window.sessionStorage.setItem("UserRole", "REVEIWER");
+        else if(user.role == "REVIEWER"){
+          window.sessionStorage.setItem("UserRole","REVIEWER");
           this.state.isFound = true;
-          this.props.history.push('/');
-          window.sessionStorage.setItem("UserRole", "REVEIWER");
+          this.props.history.push('/review');
+          window.sessionStorage.setItem("UserRole","REVIEWER");
         }
       } else if (this.state.isValid == false && this.state.isFound == true) {
         this.state.isFound = true;
