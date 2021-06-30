@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import ViewConference from '../Editor/ViewConference/ViewConference'
+import workshopList from '../Workshops/WorkshopList/workshopList'
+import ConferenceDetails from '../Conference/ConferenceDetails/ConferenceDetails'
 
-export default class Logout extends Component {
+export default class Adminhome extends Component {
     constructor(props) {
         super(props)
 
@@ -28,11 +31,12 @@ export default class Logout extends Component {
     handler = () => { this.setState() }
 
     render() {
-        window.sessionStorage.removeItem("UserRole") 
         return (
-            <>
-                
-            </>
+            <div>
+                <ViewConference/>
+                <workshopList></workshopList>
+              
+            </div>
         )
     }
 }

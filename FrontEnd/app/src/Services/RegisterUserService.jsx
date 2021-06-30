@@ -9,6 +9,10 @@ import axios from 'axios';
         return axios.get('http://localhost:8080/users/opUsers'+ '/' +cEmail);
     }
 
+    updateuser(email ,user){
+        return  axios.put('http://localhost:8080/users/updateUser'+ '/' +email , user)
+    }
+
 
 }
 export default new RegisterUserService();
