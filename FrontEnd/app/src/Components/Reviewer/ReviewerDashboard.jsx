@@ -18,7 +18,6 @@ export default class ReviewerDashboard extends Component {
                         <h3>Reviewer Dashboard</h3>
                     </div>
 
-
                     <Row className="landing">
                     <Col >
                         <Card style={{ width: '18rem' }} className="text-center">
