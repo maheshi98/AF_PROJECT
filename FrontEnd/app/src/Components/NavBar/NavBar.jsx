@@ -61,14 +61,14 @@ export default class NavBar extends Component {
                 details: []
             },
             {
+                link: "/add-workshop",
+                text: "Workshop",
+                details: [  ]
+            },
+            {
                 link: "/workshops",
                 text: "Workshops",
-                details: [
-                    {
-                        link: "/addWorkshop",
-                        text: "AddWorkshop"
-                    },
-                ]
+                details: [  ]
             },
             {
                 link: "/conference",
@@ -107,7 +107,7 @@ export default class NavBar extends Component {
             },
             {
                 link: "/contactUs",
-                text: "Dashboard",
+                text: "Contact Us",
                 details: []
             }
         ];

@@ -82,8 +82,8 @@ export default class Login extends Component {
 
           } else if (user.roleId == "Workshop Conductor") {
             this.state.isFound = true;
-            this.props.history.push('/');
-            window.sessionStorage.setItem("RoleType", "Workshop Conductor");
+            this.props.history.push('/add-workshop');
+            window.sessionStorage.setItem("RoleType","Workshop Conductor");
           }
           else if (user.roleId == "Researcher") {
             this.state.isFound = true;
@@ -100,8 +100,8 @@ export default class Login extends Component {
         else if (user.role == "EDITOR") {
           window.sessionStorage.setItem("UserRole", "EDITOR");
           this.state.isFound = true;
-          this.props.history.push('/');
-          window.sessionStorage.setItem("UserRole", "EDITOR");
+          this.props.history.push('/conference');
+          window.sessionStorage.setItem("UserRole","EDITOR");
         }
         else if (user.role == "REVEIWER") {
           window.sessionStorage.setItem("UserRole", "REVEIWER");
