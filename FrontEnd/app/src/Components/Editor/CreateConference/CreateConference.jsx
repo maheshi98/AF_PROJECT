@@ -53,9 +53,13 @@ export default class CreateConference extends Component {
                             value: item.id,
                             label: item.title,
                             name: item.name,
-                            status: item.status
+                            status: item.status,
+                            link: item.pdf
                         }
                         data.push(researchPaper)
+                        // if (researchPaper.status == "Approved") {
+                        //     data.push(researchPaper)
+                        // }
                     });
                     this.setState({ researchPapersOptions: data });
                 })
@@ -76,9 +80,10 @@ export default class CreateConference extends Component {
                             value: item._id,
                             label: item.workshopTitle,
                             time: item.time,
-                            status: item.status
+                            status: item.status,
+                            link: item.fileLink
                         }
-                        if (workshop.status) {
+                        if (workshop.status == "Approved") {
                             data.push(workshop)
                         }
                     });
@@ -117,16 +122,39 @@ export default class CreateConference extends Component {
      */
     onSubmit = (e) => {
         e.preventDefault();
-        let conference = {
-            confTopic: this.state.confTopic,
-            confDate: this.state.confDate,
-            confDescription: this.state.confDescription,
-            researchPapers: this.state.selectedResearchPapers,
-            workshops: this.state.selectedWorkshops,
-            approveStatus: this.state.approveStatus
-        };
-        console.log("CONFERENCE REQUEST TO CREATE: ", conference);
-        createConferenceFn(conference);
+        if (this.handleFormValidation()) {
+            let conference = {
+                confTopic: this.state.confTopic,
+                confDate: this.state.confDate,
+                confDescription: this.state.confDescription,
+                researchPapers: this.state.selectedResearchPapers,
+                workshops: this.state.selectedWorkshops,
+                approveStatus: this.state.approveStatus
+            };
+            console.log("CONFERENCE REQUEST TO CREATE: ", conference);
+            createConferenceFn(conference);
+        }
+    }
+
+    /**
+    * @description Validate fields
+    * @memberof CreateConference
+    */
+    handleFormValidation() {
+
+        const { confTopic, confDate, confDescription, selectedResearchPapers, selectedWorkshops } = this.state;
+
+        if (!confTopic) {
+            alert('Conference Topic could not be empty.');
+        } else if (!confDate) {
+            alert('Conference Date could not be empty.');
+        } else if (!confDescription) {
+            alert('Conference Description could not be empty.');
+        } else if (!selectedResearchPapers) {
+            alert('Select one or more Research Papers.');
+        } else {
+            alert('Select one or more Workshops.');
+        }
     }
 
     render() {
