@@ -34,6 +34,7 @@ class ImportantDates extends Component {
         getAllImportantDateFn(callbackFn);
     }
 
+
     render() {
         return (
             <div id='dates'>
@@ -42,7 +43,7 @@ class ImportantDates extends Component {
                         <h2>Important Dates</h2>
                     </div>
                     <div className='row'>
-                        {
+                        { 
                             this.state.dates.length > 0 ? this.state.dates.map((item, index) => (
                                 <div className='col-md-4'>
                                     <div className='date'>
