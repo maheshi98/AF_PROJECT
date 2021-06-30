@@ -57,7 +57,7 @@ export default class Payment extends Component {
 
     render() {
         return (
-            <div className='container'>
+            <div style={{marginTop: "-4cm"}}>
                 <div id='createConference'>
                     <div className='section-title text-center'>
                         <h3>Payment</h3>

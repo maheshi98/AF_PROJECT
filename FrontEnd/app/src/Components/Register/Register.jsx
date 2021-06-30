@@ -101,9 +101,9 @@ export default class Register extends Component {
                     <div className = "card-body" style={{ alignContent:'center', width:'25cm'}}>
           <form method="POST" onSubmit= {this.handleSubmit} style={{ alignContent:'center', width:'25cm'}} >
           <div className="form-group row" style={{ alignContent:'center', width:'25cm'}}>
-               <label  className="col-sm-2 col-form-label">Name</label>
+               <label  className="col-sm-2 col-form-label" htmlFor={name}>Name</label>
                <div className="col-sm-5">
-                 <input type="text" name="firstname" value={this.state.firstname} className="form-control" onChange={this.handleChange} placeholder="Jone" required></input>
+                 <input type="text" id = "fisrtname" name="firstname" value={this.state.firstname} className="form-control" onChange={this.handleChange} placeholder="Jone" required></input>
                  
                </div>
                <div className="col-sm-5">
@@ -111,9 +111,9 @@ export default class Register extends Component {
                </div>
            </div>
            <div className="form-group row">
-               <label className="col-sm-2 col-form-label">Email<span class="required"><font size="5">*</font></span></label>
+               <label className="col-sm-2 col-form-label"  >Email<span class="required"><font size="5">*</font></span></label>
                <div className="col-sm-10">
-                 <input type="email"  size="25" name="email" value={this.state.email}  className="form-control" onChange={this.handleChange} placeholder="name@example.com" required/>
+                 <input type="email" id = "email"  size="25" name="email" value={this.state.email}  className="form-control" onChange={this.handleChange} placeholder="name@example.com" required/>
                </div>
                
            </div>
