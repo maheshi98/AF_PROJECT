@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import ViewConference from '../Editor/ViewConference/ViewConference'
-import workshopList from '../Workshops/WorkshopList/workshopList'
 import ConferenceDetails from '../Conference/ConferenceDetails/ConferenceDetails'
+import { Card } from 'react-bootstrap'
+import workshopList from '../Workshops/WorkshopList/workshopList'
+import './AdminHome.css';
+
 
 export default class Adminhome extends Component {
     constructor(props) {
@@ -32,11 +35,18 @@ export default class Adminhome extends Component {
 
     render() {
         return (
-            <div>
+            <div className='section-title text-center'>
+                <h4> Admion Dashborad
+                </h4>
+                <div className="container">
+                
+                <Card className="center-col">
                 <ViewConference/>
-                <workshopList></workshopList>
-              
+                </Card>
+            
             </div>
+            </div>
+            
         )
     }
 }
