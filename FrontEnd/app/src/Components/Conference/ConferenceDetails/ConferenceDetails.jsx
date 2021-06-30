@@ -57,7 +57,7 @@ export default class ConferenceDetails extends Component {
                                     <h4>{this.state.conferenceDetails.confTopic}</h4>
                                     <h5>{this.state.conferenceDetails.confDate}</h5>
                                     <p style={{ fontSize: 18, fontFamily: "revert" }}>{this.state.conferenceDetails.confDescription}</p>
-                                    <div class="text-center">
+                                    <div className="text-center">
                                         <Link to='/register'> <Button style={{ marginBottom: 0 }} variant="primary" >Register Now</Button></Link>
                                     </div>
                                     <h5></h5>

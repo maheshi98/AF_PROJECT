@@ -13,8 +13,8 @@ class WorkshopDataService {
       return http.post("/workshop/create", data);
     }
   
-    update(id, data) {
-      return http.put(`/workshop/${id}`, data);
+    update(data) {
+      return http.put(`/workshop/update`, data);
     }
   
     delete(id) {
@@ -22,7 +22,7 @@ class WorkshopDataService {
     }
   
     findByUserId(id) {
-      return http.get(`/workshop/byUserId/{id}`);
+      return http.get(`/workshop/byUserId/${id}`);
     }
     upload(file, onUploadProgress) {
       let formData = new FormData();

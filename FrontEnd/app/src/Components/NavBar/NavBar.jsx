@@ -71,6 +71,11 @@ export default class NavBar extends Component {
                 details: [  ]
             },
             {
+                link: "/user-workshops",
+                text: "UserWorkshop",
+                details: [  ]
+            },
+            {
                 link: "/conference",
                 text: "Conference",
                 details: []

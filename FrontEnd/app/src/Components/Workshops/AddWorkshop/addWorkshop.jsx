@@ -3,19 +3,20 @@ import WorkshopDataService from '../../../Services/WorkshopService';
 import { Row, Col, Form, Button, Image } from 'react-bootstrap';
 import './addWorkshops.css';
 import imgworkshop from 'url:~/src/Assets/workshop1.png';
+import imgworkshop1 from 'url:~/src/Assets/workshop2.png';
 
 
 const initialState = {
   _id: null,
-  userId: null,
+  userId: "",
   workshopTitle: "",
   date: "",
   time: "",
-  mobileNo: "",
+  mobileNo: 0,
   email: "",
   proposal: "",
   fileLink: "",
-  status: false,
+  status: "Pending",
   fileName: "",
   fileDownloadUri: "",
   fileType: "",
@@ -46,6 +47,8 @@ export default class addWorkShop extends Component {
       });
     });
   }*/
+  
+  componentDidUpdate(prevProps, prevState, snapshot) { if (prevState.name !== this.state.name) { this.handler() } }
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
@@ -53,6 +56,7 @@ export default class addWorkShop extends Component {
 
   saveWorkshop() {
     var data = {
+      userId: window.sessionStorage.getItem("UserId"),
       workshopTitle: this.state.workshopTitle,
       date: this.state.date,
       time: this.state.time,
@@ -65,17 +69,18 @@ export default class addWorkShop extends Component {
 
     WorkshopDataService.create(data).then(response => {
       this.setState({
-        id: response.data.id,
-        workshopTitle: response.data.workshopTitle,
-        date: response.data.date,
-        time: response.data.time,
-        mobileNo: response.data.mobileNo,
-        email: response.data.email,
-        approved: response.data.approved,
+         userId: response.data.userId,
+         id: response.data.id,
+         workshopTitle: response.data.workshopTitle,
+         date: response.data.date,
+         time: response.data.time,
+         mobileNo: response.data.mobileNo,
+         email: response.data.email,
+         //approved: response.data.approved,
 
-        submitted: true
+         //submitted: true
       });
-      console.log(response.data);
+      console.log("response"+response.data);
     })
       .catch(e => {
         console.log(e);
@@ -127,7 +132,7 @@ export default class addWorkShop extends Component {
       <div className='container'>
         <div id='createWorkshop'>
           <div className='section-title text-center'>
-            <h4>Add Your Workshop proposal</h4>
+            <h4>Add Your Workshop proposal here</h4>
           </div>
           <Row className="landing">
             <Col>
@@ -198,8 +203,9 @@ export default class addWorkShop extends Component {
                 <Button type="submit" style={{ backgroundColor: '#37474F', paddingRight: 10 }}>Submit</Button> {''}
               </Form>
             </Col>
-            <Col >
-               <Image src={imgworkshop} thumbnail style={{ border: "none" }} />
+            <Col ><Row>
+               <Image src={imgworkshop} thumbnail style={{ border: "none" }} /></Row>
+               <Row><Image src={imgworkshop1} thumbnail style={{ border: "none" }} /></Row>
             </Col>
           </Row>
         </div>
