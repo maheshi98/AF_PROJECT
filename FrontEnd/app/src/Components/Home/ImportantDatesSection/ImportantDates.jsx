@@ -37,7 +37,7 @@ class ImportantDates extends Component {
     render() {
         return (
             <div id='dates'>
-                <div className='container'>
+                <div style= {{paddingLeft : "3cm" , paddingRight : "3cm"}}>
                     <div className='section-title text-center'>
                         <h2>Important Dates</h2>
                     </div>

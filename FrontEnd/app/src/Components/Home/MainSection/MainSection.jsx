@@ -35,7 +35,7 @@ class MainSection extends Component {
         const conf_date = [dates[0], dates[1]].join(' - ');
 
         return (
-            <div>
+            <div >
                 <Card className="bg-dark text-white">
                     <Card.Img src={logo} alt="Card image" className="logo" style={{ height: 700 }} />
                     <Card.ImgOverlay>
