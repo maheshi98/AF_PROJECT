@@ -26,6 +26,7 @@ export default class Userprofile extends Component {
         this.ChangeFirstName = this.ChangeFirstName.bind(this);
         this.shoot = this.shoot.bind(this);
         this.onChange = this.onChange.bind(this);
+        this.deleteprof = this.deleteprof.bind(this);
         this.state = initialState;
     }
    
@@ -44,6 +45,13 @@ export default class Userprofile extends Component {
       RegisterUserService.updateuser(id , user).then(res => {
         console.log("ID" +this.state.UserId , user);
       });
+    }
+    deleteprof(event){
+      event.preventDefault();
+      let id = window.sessionStorage.getItem("UserId");
+      RegisterUserService.deleteUser(id).then(res =>{
+        this.props.history.push('/');
+      })
     }
 
 
@@ -98,7 +106,7 @@ export default class Userprofile extends Component {
                 <p className="text-secondary mb-1">Full Stack Developer</p>
                  </div>
                 <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                <button className="btn btn-primary">Log Out</button>
+                <Link to='/logout'><button className="btn btn-primary">Log Out</button></Link>
               
                 </div>
             </div>
@@ -182,8 +190,8 @@ export default class Userprofile extends Component {
             <div className="row">
               <div className="col-sm-12">
               <Form.Group>
-              <Link to='/logout'> <Button type="submit" onClick={this.shoot}  style={{ backgroundColor: '#37474F', paddingRight: 10 }}>Edit</Button> </Link>{''}
-                  <Link to='/'>  <Button type="back" style={{ backgroundColor: '#37474F', paddingRight: 10 }}>Go Back</Button></Link>
+              <Button type="submit" onClick={this.shoot}  style={{ backgroundColor: '#37474F', paddingRight: 10 }}>Edit</Button> 
+                <Button type="back"  onClick={this.deleteprof}  style={{ backgroundColor: '#37474F', paddingRight: 10 }}>Delete</Button>
               </Form.Group>             
                </div>
             </div>

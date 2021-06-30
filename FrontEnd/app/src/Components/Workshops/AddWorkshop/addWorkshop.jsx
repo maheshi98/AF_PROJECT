@@ -135,6 +135,8 @@ export default class addWorkShop extends Component {
                 <Form.Group >
                   <Form.Label>Workshop Title</Form.Label>
                   <Form.Control
+                  htmlFor={name}
+                   id = "title"
                     type="text"
                     name="workshopTitle"
                     placeholder="workshopTitle" required
@@ -171,7 +173,9 @@ export default class addWorkShop extends Component {
                 <Form.Group>
                   <Form.Label>Email</Form.Label>
                   <Form.Control
-                    type="text"
+                  htmlFor={name}
+                   id = "email"
+                    type="email"
                     name="email"
                     placeholder="Email" required
                     value={this.state.email}

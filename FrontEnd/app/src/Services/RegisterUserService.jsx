@@ -13,6 +13,10 @@ import axios from 'axios';
         return  axios.put('http://localhost:8080/users/updateUser'+ '/' +email , user)
     }
 
+    deleteUser(email){
+        return axios.delete('http://localhost:8080/users/delete'+ '/' +email)
+    }
+
 
 }
 export default new RegisterUserService();
