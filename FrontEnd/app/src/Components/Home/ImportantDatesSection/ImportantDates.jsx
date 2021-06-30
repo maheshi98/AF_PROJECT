@@ -36,9 +36,16 @@ class ImportantDates extends Component {
 
 
     render() {
+        // let dates = [this.state.dates];
+        // var length = this.state.dates.length;
+        // var first = dates[0];
+        // console.log("length of important dates", first)
+        // console.log("length of important dates", first[3])
+        // console.log("length of important dates", item.date)
+
         return (
             <div id='dates'>
-                <div className='container'>
+                <div style= {{paddingLeft : "3cm" , paddingRight : "3cm"}}>
                     <div className='section-title text-center'>
                         <h2>Important Dates</h2>
                     </div>
@@ -49,7 +56,7 @@ class ImportantDates extends Component {
                                     <div className='date'>
                                         <div className='date-content'>
                                             <h3>{item.description}</h3>
-                                            <p>Hellow world submit document here.</p>
+                                            <p>You can submit your papers by registering <a href="/register" style={{color: "blue"}}>here.</a></p>
                                             <div className='date-meta'>{item.date}</div>
                                         </div>
                                     </div>

@@ -15,7 +15,7 @@ class Gallery extends Component {
     render() {
         return (
             <div id='portfolio' className='text-center'>
-                <div className='container'>
+                <div style= {{paddingLeft : "3cm" , paddingRight : "3cm"}}>
                     <div className='section-title'>
                         <h2>Gallery</h2>
                         <p>Check out gallery from recent events</p>

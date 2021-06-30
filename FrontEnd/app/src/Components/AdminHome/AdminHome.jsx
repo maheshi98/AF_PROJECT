@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import ViewConference from '../Editor/ViewConference/ViewConference'
-import ConferenceDetails from '../Conference/ConferenceDetails/ConferenceDetails'
+// import ViewConference from '../Editor/ViewConference/ViewConference'
+import ViewConference from './ConferenceAdmin/ConferenceAdmin'
+// import ConferenceDetails from '../Conference/ConferenceDetails/ConferenceDetails'
 import { Card , Row , Col , Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import research from 'url:~/src/Assets/research.png';

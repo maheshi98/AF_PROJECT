@@ -1,4 +1,5 @@
 import ConferenceService from '../Services/Conference';
+import WorkshopService from '../Services/WorkshopService';
 
 /**
  * @description This method create new conference
@@ -52,36 +53,48 @@ export const getApprovedConferenceFn = (callback) => {
 }
 
 /**
- * @description This method delete conference
- * @param {String} id 
+ * @description This method get all Workshops
+ * @param {Function} callback
  * @memberof ConferenceHandler
  */
-// export const deleteConferenceFn = (id) => {
-//     console.log("ConferenceHandler :: deleteConferenceFn", id);
-//     ConferenceService.delete(id)
-//         .then(response => {
-//             alert('Data successfully Deleted.');
-//         })
-//         .catch(error => {
-//             console.log(error.message);
-//             alert(error.message);
-//         })
-// }
+export const getWorkshopsFn = (callback) => {
+    console.log("ConferenceHandler :: getWorkshopsFn", callback);
+    WorkshopService.getAll()
+        .then(response => callback({ data: response.data }))
+        .catch(error => callback({ error: error }));
+}
+
+/**
+ * @description This method delete conference
+ * @param {String} id
+ * @memberof ConferenceHandler
+ */
+export const deleteConferenceFn = (id) => {
+    console.log("ConferenceHandler :: deleteConferenceFn", id);
+    ConferenceService.delete(id)
+        .then(response => {
+            alert('Data successfully Deleted.');
+        })
+        .catch(error => {
+            console.log(error.message);
+            alert(error.message);
+        })
+}
 
 /**
  * @description This method change status of conference
- * @param {String} id 
- * @param {STring} status
+ * @param {String} id
+ * @param {String} status
  * @memberof ConferenceHandler
-//  */
-// export const changeStatusFn = (id, status) => {
-//     console.log("ConferenceHandler :: changeStatusFn", id, status);
-//     ConferenceService.changeStatusApproved(id, status)
-//         .then(response => {
-//             alert('Changed Status.');
-//         })
-//         .catch(error => {
-//             console.log(error.message);
-//             alert(error.message);
-//         })
-// }
+ */
+export const changeStatusFn = (id, status) => {
+    console.log("ConferenceHandler :: changeStatusFn", id, status);
+    ConferenceService.changeStatusApproved(id, status)
+        .then(response => {
+            alert('Changed Status.');
+        })
+        .catch(error => {
+            console.log(error.message);
+            alert(error.message);
+        })
+}

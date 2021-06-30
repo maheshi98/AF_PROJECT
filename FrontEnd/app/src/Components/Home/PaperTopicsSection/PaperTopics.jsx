@@ -48,7 +48,7 @@ export default class MainSection extends Component {
         ]
         return (
             <div id='topics'>
-                <div className='container'>
+                <div style= {{paddingLeft : "3cm" , paddingRight : "3cm"}}>
                     <div className='section-title text-center'>
                         <h2>Submission Topics</h2>
                         <p style={{ color: "white" }}>Papers can be submitted to the conference under the following regular tracks</p>

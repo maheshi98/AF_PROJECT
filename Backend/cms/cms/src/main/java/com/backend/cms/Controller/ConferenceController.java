@@ -27,7 +27,6 @@ public class ConferenceController {
     @PostMapping("/create")
     public ResponseEntity<Conference> createConference(@RequestBody Conference conference) {
         try{
-//            Conference _conference = conferenceRepository.save(conference);
             conferenceService.createConference(conference);
             return ResponseEntity.status(HttpStatus.CREATED).build();
         }catch(Exception e){
@@ -59,7 +58,6 @@ public class ConferenceController {
     public ResponseEntity<List<Conference>> getAllConference(){
         try{
             List<Conference> conference = new ArrayList<Conference>();
-//            conferenceRepository.findAll().forEach(conference::add);
             conferenceService.getAllConference().forEach(conference::add);
             if(conference.isEmpty()){
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);

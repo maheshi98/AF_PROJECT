@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import logo from 'url:~/src/Assets/backNew.jpg';
+import add from 'url:~/src/Assets/new.png';
 import { getImportantDateByIdFn } from '../../../BizLogic';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, Col, Image, Row } from 'react-bootstrap';
 import './MainSectionStyles.css';
 
 class MainSection extends Component {
@@ -17,7 +18,7 @@ class MainSection extends Component {
     }
 
     componentDidMount() {
-        getImportantDateByIdFn("60b266c2d0e5b10676a9efa7").then(response => {
+        getImportantDateByIdFn("60dc480a3f95ef85fdd30d01").then(response => {
             this.setState({
                 date: response
             })
@@ -35,14 +36,28 @@ class MainSection extends Component {
         const conf_date = [dates[0], dates[1]].join(' - ');
 
         return (
-            <div>
+            <div >
                 <Card className="bg-dark text-white">
                     <Card.Img src={logo} alt="Card image" className="logo" style={{ height: 700 }} />
                     <Card.ImgOverlay>
-                        <Card.Text style={{ fontSize: 40, paddingTop: 60, paddingLeft: 50, textAlign: 'left', textTransform: 'uppercase' }}>{this.state.date.description}</Card.Text>
-                        <Card.Title style={{ fontSize: 70, fontWeight: 'bolder', textAlign: 'left', paddingTop: 20, paddingLeft: 50 }}>CONFERENCE</Card.Title>
+                        <Row>
+                            <Col>
+                                <Card.Text style={{ fontSize: 40, paddingTop: 60, paddingLeft: 50, textAlign: 'left', textTransform: 'uppercase' }}>{this.state.date.description}</Card.Text>
+                                <Card.Title style={{ fontSize: 70, fontWeight: 'bolder', textAlign: 'left', paddingTop: 20, paddingLeft: 50 }}>CONFERENCE</Card.Title>
+                            </Col>
+                            {/* <Col >
+                                <Image src={add} thumbnail style={{ border: "none", width: 200, height: 200, marginLeft: -500, marginTop: 10 }} />
+                            </Col> */}
+                        </Row>
+                        <Row>
+                            <Col >
+                                <Card.Title style={{ fontSize: 30, fontFamily:"monospace", fontWeight: 'bolder', textAlign: 'left', paddingTop: 70, paddingLeft: 50 }}>International Conference on Application Framework - ICAF</Card.Title>
+                            </Col>
+                            <Col>
                         <Card.Text style={{ fontSize: 70, textAlign: 'right', paddingRight: 50 }}>{word}</Card.Text>
                         <Card.Title style={{ fontSize: 70, fontWeight: 'bolder', textAlign: 'right', paddingRight: 50 }}>{conf_date}</Card.Title>
+                        </Col>
+                        </Row>
                         <Card.Text style={{ fontSize: 33, paddingTop: 20, textAlign: 'right' }}> Sri Lanka Institute of Information Technology, Sri Lanka</Card.Text>
                         <Card.Text style={{ paddingLeft: 100, fontSize: 25, textAlign: 'left' }}>
                             <Link to='/login'> <Button style={{ fontSize: 20, width: 150, paddingRight: 10, borderRadius: 20 }} variant="warning">Log In</Button>{' '}</Link>
