@@ -48,7 +48,7 @@ export default class ReviewTable extends Component {
                           <td>{item.contact_no}</td>
                           <td>{item.title}</td>
                           <td>{item.pdf}</td>
-                          <td> <Button variant="success">Accept</Button>{' '}  <Button variant="danger">Decline</Button>{' '}</td>
+                          <td> <Button variant="success">Accept</Button>{' '} <br/><br/> <Button variant="danger">Decline</Button>{' '}</td>
                     </tr>
                 );
     
