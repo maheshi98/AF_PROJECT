@@ -19,9 +19,9 @@ import Payment from './Components/Payment/Payment';
 import ReviewerDashboard from './Components/Reviewer/ReviewerDashboard';
 import ReviewTable from './Components/Reviewer/ReviewTable';
 import Userprofile from './Components/Userprofile/UserProfile';
-import Navbarnew from './Components/Navbar/Navbar';
 import Logout from './Components/Logout/Logout';
 import Adminhome from './Components/AdminHome/AdminHome';
+import Navbarnew from './Components/NavbarNew/NavbarNew';
 
 export default class App extends Component {
     constructor(props) {
@@ -33,7 +33,7 @@ export default class App extends Component {
         return (
             <div className= "body">
                
-                <Navbarnew />
+                <Navbarnew></Navbarnew>
                 <BrowserRouter>
                     <Switch>
                         <Route exact path='/' component={HomePage} />
