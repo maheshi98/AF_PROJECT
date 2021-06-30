@@ -16,7 +16,8 @@ export default class Register extends Component {
           password : null,
           cnfpwd : null,
           role : "USER",
-    
+          RoleType: null,
+
           error : null,
      
         }
@@ -60,6 +61,10 @@ export default class Register extends Component {
 
           });
     }
+    componentDidMount() {
+      window.sessionStorage.getItem("RoleType");
+      this.state.RoleType = sessionStorage.RoleType
+  }
 
     handleSubmit(event){
       if(this.state.password == null){
@@ -81,7 +86,11 @@ export default class Register extends Component {
       console.log('User =>' + JSON.stringify(user));
 
       RegisterUserService.addCustomer(user).then(res => {
+        if(sessionStorage.RoleType == "Attendee"){
         this.props.history.push("/payment")
+        }else{
+          this.props.history.push("/")
+        }
     });
 
     }

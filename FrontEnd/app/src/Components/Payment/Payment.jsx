@@ -11,7 +11,8 @@ const initialState = {
     nameOnTheCard : ''  ,
     cardNumber : '',
     cvc : '',
-    exDate : ''
+    exDate : '',
+    RoleType: null
 }
 
 export default class Payment extends Component {
@@ -25,7 +26,8 @@ export default class Payment extends Component {
     }
 
     componentDidMount() {
-        
+        window.sessionStorage.getItem("RoleType");
+        this.state.RoleType = sessionStorage.RoleType
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) { if (prevState.name !== this.state.name) { this.handler() } }
@@ -49,6 +51,7 @@ export default class Payment extends Component {
         };
         console.log("P:AYMENT IS SUCCESSFUL ", payment);
         PaymentService.addpayment(payment).then(res =>{
+            this.props.history.push("/")
 
         })
 
@@ -56,6 +59,7 @@ export default class Payment extends Component {
 
 
     render() {
+    if(sessionStorage.RoleType == "Attendee"){
         return (
             <div style={{marginTop: "-4cm"}}>
                 <div id='createConference' style= {{paddingLeft : "3cm" , paddingRight : "3cm"}}>
@@ -120,5 +124,7 @@ export default class Payment extends Component {
                 </div >
             </div >
         )
+    }
+       
     }
 }

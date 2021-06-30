@@ -55,6 +55,7 @@ export default class UploadResearch extends Component {
               isLoaded: true,
 
           })
+        //   this.props.history.push("/")
       });
       //toast.success("Successfully Added !");
     }
@@ -62,7 +63,7 @@ export default class UploadResearch extends Component {
 
     render() {
         return (
-            <div className='container'>
+            <div style= {{paddingLeft : "3cm" , paddingRight : "3cm" , marginTop :"-3cm"}}>
                 <div id='createConference'>
                     <div className='section-title text-center'>
                         <h3>Add new Research Paper</h3>
