@@ -152,8 +152,10 @@ export default class CreateConference extends Component {
             alert('Conference Description could not be empty.');
         } else if (!selectedResearchPapers) {
             alert('Select one or more Research Papers.');
-        } else {
+        } else if (!selectedWorkshops) {
             alert('Select one or more Workshops.');
+        } else {
+            return true
         }
     }
 
