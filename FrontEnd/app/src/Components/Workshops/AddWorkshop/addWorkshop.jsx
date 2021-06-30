@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import WorkshopDataService from '../../../Services/WorkshopService';
 import { Row, Col, Form, Button, Image } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 import './addWorkshops.css';
 import imgworkshop from 'url:~/src/Assets/workshop1.png';
 import imgworkshop1 from 'url:~/src/Assets/workshop2.png';
@@ -129,7 +130,8 @@ export default class addWorkShop extends Component {
   render() {
     const { selectedFiles, currentFile, progress, message, fileInfos } = this.state;
     return (
-      <div className='container'>
+      <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
+        <Link to='/user-workshops'>  <Button type="My Workshops" style={{ backgroundColor: '#37474F', paddingRight: 10 }}>Back</Button></Link>
         <div id='createWorkshop'>
           <div className='section-title text-center'>
             <h4>Add Your Workshop proposal here</h4>

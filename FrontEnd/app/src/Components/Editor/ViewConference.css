@@ -1,5 +1,7 @@
 .section-title {
 	margin-bottom: 50px;
+	margin-top: 50px;
+	text-align: center;
 }
 .section-title h2 {
 	position: relative;
@@ -7,6 +9,9 @@
 	margin-bottom: 15px;
 	padding-bottom: 15px;
     text-transform: uppercase;
+}
+.section-title p {
+color: #666;
 }
 .section-title h2::after {
 	position: absolute;
@@ -18,7 +23,7 @@
 	margin-left: -30px;
 	left: 50%;
 }
-#conference {
-	padding: 80px 0;
+#viewConference {
+	/* padding: 80px 0; */
 	background: #ffffff;
 }

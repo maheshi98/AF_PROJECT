@@ -25,6 +25,13 @@ class CmsApplicationTests {
     @Test
     public void testGetConferenceAll() {
         List<Conference> conference = conferenceRepository.findAll();
-        assertThat(conference.size(), is(greaterThanOrEqualTo(0)));
+        assertThat(conference.size(), is(greaterThanOrEqualTo(1)));
     }
+
+    @Test
+    public void testGetApprovedConference() {
+        List<Conference> conference = conferenceRepository.findByApproveStatus("Pending");
+        assertThat(conference.size(), is(greaterThanOrEqualTo(1)));
+    }
+
 }

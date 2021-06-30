@@ -37,7 +37,7 @@ class KeyNoteSpeakers extends Component {
     render() {
         return (
             <div id='speakers'>
-                <div className='container'>
+                <div style= {{paddingLeft : "3cm" , paddingRight : "3cm"}}>
                     <div className='section-title text-center'>
                         <h2>Key Note Speakers</h2>
                         <p>Introducing the names speaking at Technology Conference 2021:</p>

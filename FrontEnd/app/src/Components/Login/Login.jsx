@@ -100,7 +100,7 @@ export default class Login extends Component {
         else if (user.role == "EDITOR") {
           window.sessionStorage.setItem("UserRole", "EDITOR");
           this.state.isFound = true;
-          this.props.history.push('/conference');
+          this.props.history.push('/conference-admin');
           window.sessionStorage.setItem("UserRole","EDITOR");
         }
         else if(user.role == "REVIEWER"){

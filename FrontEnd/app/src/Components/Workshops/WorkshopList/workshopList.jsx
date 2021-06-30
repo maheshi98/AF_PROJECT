@@ -75,7 +75,7 @@ setActiveWorkshop(workshop, index) {
     const { workshops } = this.state;
 
     return (
-      <div className="container">
+      <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
         <Link to='/review'>  <Button type="back" style={{ backgroundColor: '#37474F', paddingRight: 10 }}>Back</Button></Link>
         <br />
         <h1>Workshop Details</h1>

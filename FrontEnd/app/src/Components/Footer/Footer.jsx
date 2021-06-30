@@ -10,13 +10,13 @@ export default class Footer extends Component {
     render() {
         return (
             <footer class="footer-section">
-                <div class="container">
+                <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
                     <div class="footer-content pt-5 pb-5">
                         <div class="row">
                             <div class="col-xl-4 col-lg-4 mb-5">
                                 <div class="footer-widget">
                                     <div class="footer-logo">
-                                        <a href="index.html"><img
+                                        <a href="/"><img
                                             src={logo}
                                             class="img-fluid"
                                             alt="logo"
@@ -51,7 +51,7 @@ export default class Footer extends Component {
                     </div >
                 </div >
                 <div class="copyright-area">
-                    <div class="container">
+                    <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 text-center text-lg-left">
                                 <div class="copyright-text">
