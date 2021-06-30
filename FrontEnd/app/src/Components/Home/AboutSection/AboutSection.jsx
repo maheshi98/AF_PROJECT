@@ -13,7 +13,7 @@ class MainSection extends Component {
         return (
             <div className="mainContainer">
                 <div id='about'>
-                    <div className='container'>
+                    <div >
                         <div className='row'>
                             <div className='col-xs-12 col-md-6'>
                                 <img src={logo} className='img-responsive' alt='' />{' '}
