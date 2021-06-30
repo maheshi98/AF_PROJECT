@@ -124,7 +124,7 @@ export default class addWorkShop extends Component {
   render() {
     const { selectedFiles, currentFile, progress, message, fileInfos } = this.state;
     return (
-      <div className='container'>
+      <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
         <div id='createWorkshop'>
           <div className='section-title text-center'>
             <h4>Add Your Workshop proposal</h4>

@@ -68,7 +68,7 @@ export default class ConferenceDetails extends Component {
                             </Col>
                         </Row>
                         <hr />
-                        <div className="container">
+                        <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
                             <div className='section-title text-center'>
                                 <h3>Publications</h3>
                                 <br />

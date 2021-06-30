@@ -60,16 +60,16 @@ export default class NavBar extends Component {
                 text: "Keynotes",
                 details: []
             },
-            // {
-            //     link: "/add-workshop",
-            //     text: "Workshop",
-            //     details: [  ]
-            // },
-            // {
-            //     link: "/workshops",
-            //     text: "Workshops",
-            //     details: [  ]
-            // },
+            {
+                link: "/add-workshop",
+                text: "Workshop",
+                details: []
+            },
+            {
+                link: "/workshops",
+                text: "Workshops",
+                details: []
+            },
             {
                 link: "/conference",
                 text: "Conference",
@@ -83,11 +83,6 @@ export default class NavBar extends Component {
             {
                 link: "/past-proceedings",
                 text: "Past Proceedings",
-                details: []
-            },
-            {
-                link: "/committee",
-                text: "Committee",
                 details: []
             },
             {
@@ -106,8 +101,8 @@ export default class NavBar extends Component {
                 details: []
             },
             {
-                link: "/contactUs",
-                text: "Contact Us",
+                link: "/adminHome",
+                text: "Admin",
                 details: []
             }
         ];
@@ -128,14 +123,22 @@ export default class NavBar extends Component {
                             )
                         })}
                     </Nav>
+                    <Nav id="navbar" className="me-auto" style={{ fontSize: "18px", paddingLeft: "25cm" }}>
+                        <Navbar.Brand href="/userprofile">
+                            <img
+                                src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                alt="Admin" className="rounded-circle"
+                                width={50} />
+                        </Navbar.Brand>
+                    </Nav>
                 </Navbar.Collapse>
-                <Navbar.Brand href="/">
+                {/* <Navbar.Brand href="/">
                     <img
                         src={logo}
                         width="70"
                         height="70"
                         className="d-inline-block align-top" />
-                </Navbar.Brand>
+                </Navbar.Brand> */}
             </Navbar>
         );
     }

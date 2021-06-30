@@ -15,11 +15,11 @@ class PastProceedings extends Component {
         return (
             <div>
                 <PageTitle title="PAST PROCEEDINGS" />
-                <div className='container'>
-                    <div className="container">
+                <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
+                    <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
                         <h5 style={{textAlign:"center"}}>Here, you can download the past conference Research Papers and Workshop submissions.</h5>
                         <div id='conference'>
-                            <div className='container'>
+                            <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
                                 <Tabs defaultActiveKey="home" transition={false} id="noanim-tab-example" variant="tabs">
                                     <Tab eventKey="home" title="Research Papers">
                                         <ResearchPaper />

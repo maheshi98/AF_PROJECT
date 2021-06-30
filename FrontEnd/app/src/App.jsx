@@ -8,7 +8,6 @@ import Register from './Components/Register/Register';
 import Keynotes from './Components/Keynotes/Keynotes';
 import Conference from './Components/Conference/Conference';
 import ConferenceDetails from './Components/Conference/ConferenceDetails/ConferenceDetails';
-import Committee from './Components/Committee/Committee';
 import PastProceedings from './Components/PastProceedings/PastProceedings';
 import addWorkshop from './Components/Workshops/AddWorkshop/addWorkshop';
 import workshopList from './Components/Workshops/WorkshopList/workshopList';
@@ -44,7 +43,6 @@ export default class App extends Component {
                         <Route exact path='/conference-details/:id' component={ConferenceDetails} />
                         <Route exact path='/conference-admin' component={ConferenceAdmin} />
                         <Route exact path='/create-conference' component={CreateConference} />
-                        <Route exact path='/committee' component={Committee} />
                         <Route exact path='/past-proceedings' component={PastProceedings} />
                         <Route exact path='/add-workshop' component={addWorkshop} />
                         <Route exact path='/add-research' component={ReviewTable} />

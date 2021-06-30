@@ -5,7 +5,7 @@ export default class NotFound extends Component {
 
     render() {
         return (
-            <div className="container" style={{}}>
+            <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
                 <img
                     className="center"
                     src={error}

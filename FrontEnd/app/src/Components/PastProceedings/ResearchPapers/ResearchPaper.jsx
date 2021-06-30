@@ -37,7 +37,7 @@ class Workshop extends Component {
     render() {
         console.log("workshops", this.state.approvedConferences)
         return (
-            <div className='container'>
+            <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
                 {
                     this.state.approvedConferences.map(
                         conference =>

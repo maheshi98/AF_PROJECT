@@ -52,9 +52,9 @@ export default class Conference extends Component {
         return (
             <div>
                 <PageTitle title="CONFERENCE" />
-                <div className="container">
+                <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
                     <div id='conference'>
-                        <div className='container'>
+                        <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
                             <h5>We are thrilled to continue our Learning Guild Certificate Programs at DevLearn. These Guild-certified two-day experiences prioritize paths to competency on core topics. </h5>
                             {/* <div className='section-title text-center'>
                                 <h2>Conference Details</h2>
