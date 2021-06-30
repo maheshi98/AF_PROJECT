@@ -9,6 +9,7 @@ export default class workshopList extends Component {
     super(props);
     this.retrieveWorkshops = this.retrieveWorkshops.bind(this);
     this.approval = this.approval.bind(this);
+    this.decline = this.decline.bind(this);
     //this.refreshList = this.refreshList.bind(this);
     //this.setActiveWorkshop = this.setActiveWorkshop.bind(this);
 
@@ -61,12 +62,22 @@ setActiveWorkshop(workshop, index) {
       .catch(err => console.log(err));
     }
 
+    decline(workshop){
+      let updatedWorkshop = workshop;
+      updatedWorkshop.status = "Rejected";
+
+      WorkshopService.update(updatedWorkshop)
+     .then(res => this.retrieveWorkshops())
+      .catch(err => console.log(err));
+    }
+
   render() {
     const { workshops } = this.state;
 
     return (
       <div className="container">
-        <Link to='/add-workshop'>  <Button type="back" style={{ backgroundColor: '#37474F', paddingRight: 10 }}>Back</Button></Link>
+        <Link to='/review'>  <Button type="back" style={{ backgroundColor: '#37474F', paddingRight: 10 }}>Back</Button></Link>
+        <br />
         <h1>Workshop Details</h1>
         <Table striped bordered hover>
           <thead style={{ textAlign: "center" }}>
@@ -94,7 +105,8 @@ setActiveWorkshop(workshop, index) {
                   <td>{workshop.email}</td>
                   <td>{workshop.fileLink}</td>
                   <td>{workshop.status}</td>
-                  <td><Button type="Approve" onClick={()=>{this.approval(workshop)}}>Approve</Button></td>
+                  <td><Button type="Approve" onClick={()=>{this.approval(workshop)}}>Approve</Button>
+                  {' '} <br/><br/> <Button type="Decline" variant="danger" onClick={()=>{this.decline(workshop)}}>Decline</Button>{' '}</td>
                   <td />
                 </tr>
               ))
