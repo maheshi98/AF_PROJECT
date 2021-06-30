@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import { Row, Col, Button, Form, Image, Alert } from 'react-bootstrap';
-import add from 'url:~/src/Assets/add.png';
+import add from 'url:~/src/Assets/add_new.png';
 import './CreateConference.css';
-import { createConferenceFn, getAllImportantDateFn } from '../../../../BizLogic'; //TODO: get papers & workshops
+import { createConferenceFn, getAllImportantDateFn } from '../../../BizLogic'; //TODO: get papers & workshops
+
+import axios from 'axios';
 
 const initialState = {
     confTopic: '',
     confDate: '',
     confDescription: '',
-    approveStatus: false,
+    approveStatus: "Pending",
     researchPapers: [],
     researchPapersOptions: [],
     selectedResearchPapers: [],
@@ -20,7 +22,6 @@ const initialState = {
 }
 
 export default class CreateConference extends Component {
-
     constructor(props) {
         super(props);
         this.onChange = this.onChange.bind(this);
@@ -41,34 +42,51 @@ export default class CreateConference extends Component {
      * @description Retrieve all Research Papers to select
      * @memberof CreateConference
      */
-    getAllResearchPapers() {
-        const callbackFn = (result) => {
-            const { data, error } = result;
-            if (data) {
-                this.setState({ researchPapers: data }, () => {
-                    let paperTitle = [];
+    getAllResearchPapers = () => {
+        // const callbackFn = (result) => {
+        //     const { data, error } = result;
+        //     if (data) {
+        //         this.setState({ researchPapers: data }, () => {
+        //             let paperTitle = [];
+        //             this.state.researchPapers.map((item, index) => {
+        //                 let researchPapersTitle = {
+        //                     value: item._id,
+        //                     label: item.date
+        //                 }
+        //                 paperTitle.push(researchPapersTitle)
+        //             });
+        //             this.setState({ researchPapersOptions: paperTitle });
+        //         });
+        //     }
+        //     if (error) {
+        //         console.log(error);
+        //     }
+        // }
+        // getAllImportantDateFn(callbackFn); //FIXME:
+
+        axios.get('http://localhost:8080/researchers/showResearch')
+            .then(response => {
+                this.setState({ researchPapers: response.data }, () => {
+                    let data = [];
                     this.state.researchPapers.map((item, index) => {
-                        let researchPapersTitle = {
-                            value: item._id,
-                            label: item.date
+                        let researchPaper = {
+                            value: item.id,
+                            label: item.title,
+                            name: item.name,
+                            status: item.status
                         }
-                        paperTitle.push(researchPapersTitle)
+                        data.push(researchPaper)
                     });
-                    this.setState({ researchPapersOptions: paperTitle });
-                });
-            }
-            if (error) {
-                console.log(error);
-            }
-        }
-        getAllImportantDateFn(callbackFn); //FIXME:
+                    this.setState({ researchPapersOptions: data });
+                })
+            })
     }
 
     /**
     * @description Retrieve all Workshops to select
     * @memberof CreateConference
     */
-    getAllWorkshops() {
+    getAllWorkshops = () => {
         const callbackFn = (result) => {
             const { data, error } = result;
             if (data) {
@@ -76,7 +94,7 @@ export default class CreateConference extends Component {
                     let workshopTitle = [];
                     this.state.workshops.map((item, index) => {
                         let workshopsTitle = {
-                            value: item._id,
+                            value: item.name,
                             label: item.date
                         }
                         workshopTitle.push(workshopsTitle)
@@ -89,13 +107,28 @@ export default class CreateConference extends Component {
             }
         }
         getAllImportantDateFn(callbackFn); //FIXME:
+
+        // axios.get('http://localhost:8080/workshop/')
+        //     .then(response => {
+        //         this.setState({ workshops: response.data }, () => {
+        //             let data = [];
+        //             this.state.categories.map((item, index) => {
+        //                 let category = {
+        //                     value: item._id,
+        //                     label: item.name
+        //                 }
+        //                 data.push(category)
+        //             });
+        //             this.setState({ category_options: data });
+        //         })
+        //     })
     }
 
     /**
     * @description Change state to input values
     * @memberof CreateConference
     */
-    onChange(e) {
+    onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
 
@@ -103,19 +136,15 @@ export default class CreateConference extends Component {
     * @description Add selected Research papers
     * @memberof CreateConference
     */
-    onResearchPapersSelect(e) {
-        this.setState(state => {
-            return {
-                selectedResearchPapers: e
-            };
-        });
+    onResearchPapersSelect = (e) => {
+        this.setState({ selectedResearchPapers: e ? e.map(item => item) : [] });
     }
 
     /**
     * @description Add selected Workshops
     * @memberof CreateConference
     */
-    onWorkshopsSelect(e) {
+    onWorkshopsSelect = (e) => {
         this.setState({ selectedWorkshops: e ? e.map(item => item.value) : [] });
     }
 
@@ -123,34 +152,34 @@ export default class CreateConference extends Component {
      * @description Add new conference details
      * @memberof CreateConference
      */
-    onSubmit(e) {
+    onSubmit = (e) => {
         e.preventDefault();
         let conference = {
             confTopic: this.state.confTopic,
             confDate: this.state.confDate,
             confDescription: this.state.confDescription,
+            researchPapers: this.state.selectedResearchPapers,
             approveStatus: this.state.approveStatus
         };
         console.log("CONFERENCE REQUEST TO CREATE: ", conference);
-        const message = createConferenceFn(conference);
-
-        return (
-            <Alert variant='success'>
-                {message}
-            </Alert>
-        )
+        createConferenceFn(conference);
     }
 
     render() {
+
+        console.log("research papers", this.state.researchPapersOptions)
         return (
-            <div className='container'>
+            <div className=''>
                 <div id='createConference'>
                     <div className='section-title text-center'>
                         <h3>Create Conference</h3>
                     </div>
                     <Row className="landing">
                         <Col >
-                            <Form onSubmit={this.onSubmit} style={{ width: "80%", marginLeft: "10%", marginTop: "10%" }}>
+                            <Image src={add} thumbnail style={{ border: "none", width: 550, height: 550, marginLeft: 150, marginTop: 0 }} />
+                        </Col>
+                        <Col >
+                            <Form onSubmit={this.onSubmit} style={{ width: "80%" }}>
                                 <Form.Group >
                                     <Form.Label>Conference Topic</Form.Label>
                                     <Form.Control
@@ -208,9 +237,6 @@ export default class CreateConference extends Component {
                                     <Link to='/conference-admin'>  <Button type="back" style={{ backgroundColor: '#37474F', paddingRight: 10 }}>Go Back</Button></Link>
                                 </Form.Group>
                             </Form>
-                        </Col>
-                        <Col >
-                            <Image src={add} thumbnail style={{ border: "none" }} />
                         </Col>
                     </Row>
                 </div >
