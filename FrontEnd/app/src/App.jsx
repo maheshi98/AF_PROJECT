@@ -17,6 +17,7 @@ import UploadResearch from './Components/ResearchPaper/UploadResearch';
 import ReviewTable from './Components/Reviewer/ReviewTable';
 import Contact from './Components/ContactUs/Contact';
 import Payment from './Components/Payment/Payment';
+import ReviewerDashboard from './Components/Reviewer/ReviewerDashboard';
 
 export default class App extends Component {
     constructor(props) {
@@ -42,7 +43,7 @@ export default class App extends Component {
                         <Route exact path='/research-paper' component={UploadResearch} />
                         <Route exact path='/contactUs' component={Contact} />
                         <Route exact path='/payment' component={Payment} />
-                        <Route exact path='/review' component={ReviewTable} />
+                        <Route exact path='/review' component={ReviewerDashboard} />
                     </Switch>
                 </BrowserRouter>
                 <Footer />
