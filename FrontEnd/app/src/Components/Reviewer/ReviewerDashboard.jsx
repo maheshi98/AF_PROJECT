@@ -12,9 +12,9 @@ export default class ReviewerDashboard extends Component {
  
     render() {
         return (
-            <div className='container'>
+            <div style={{marginLeft: "8cm"}}>
                 <div id='createConference'>
-                    <div className='section-title text-center'>
+                    <div className='section-title text-center' style={{marginLeft: "-4cm"}}>
                         <h3>Reviewer Dashboard</h3>
                     </div>
 
