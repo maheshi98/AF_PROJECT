@@ -35,6 +35,13 @@ class ImportantDates extends Component {
     }
 
     render() {
+        // let dates = [this.state.dates];
+        // var length = this.state.dates.length;
+        // var first = dates[0];
+        // console.log("length of important dates", first)
+        // console.log("length of important dates", first[3])
+        // console.log("length of important dates", item.date)
+
         return (
             <div id='dates'>
                 <div className='container'>

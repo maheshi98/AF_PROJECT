@@ -1,7 +1,9 @@
 package com.backend.cms;
 
+import com.backend.cms.Controller.ConferenceController;
 import com.backend.cms.Model.Conference;
 import com.backend.cms.Repository.ConferenceRepository;
+import com.backend.cms.Service.ConferenceService;
 import org.junit.jupiter.api.Test;
 
 import org.junit.runner.RunWith;
@@ -25,6 +27,13 @@ class CmsApplicationTests {
     @Test
     public void testGetConferenceAll() {
         List<Conference> conference = conferenceRepository.findAll();
-        assertThat(conference.size(), is(greaterThanOrEqualTo(0)));
+        assertThat(conference.size(), is(greaterThanOrEqualTo(1)));
     }
+
+    @Test
+    public void testGetApprovedConference() {
+        List<Conference> conference = conferenceRepository.findByApproveStatus("Pending");
+        assertThat(conference.size(), is(greaterThanOrEqualTo(1)));
+    }
+
 }

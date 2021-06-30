@@ -16,7 +16,7 @@ export default class Footer extends Component {
                             <div class="col-xl-4 col-lg-4 mb-5">
                                 <div class="footer-widget">
                                     <div class="footer-logo">
-                                        <a href="index.html"><img
+                                        <a href="/"><img
                                             src={logo}
                                             class="img-fluid"
                                             alt="logo"
