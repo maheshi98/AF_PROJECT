@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Card, Col, Row } from 'react-bootstrap';
+import sliit from 'url:~/src/Assets/sliit.png';
 import './Map.css';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
@@ -24,8 +26,14 @@ export default class MapSection extends Component {
                 <div className='section-title text-center'>
                     <h2>Conference Venue</h2>
                 </div>
-                <div className='row'>
-                    <div className='col-xs-12 col-md-6'>
+                <div className='map-text'>
+                    <h3>Sri Lanka Institute of Information Technology, Malabe</h3>
+                    <h5>SLIIT, a leading technological university in
+                        the region welcomes you to witness a truly unique experience!</h5>
+                </div>
+                <br />
+                <Row>
+                    <Col style={{ marginLeft: 80 }}>
                         <LoadScript
                             googleMapsApiKey="AIzaSyAspUe2Qs6uYpcT7JFkaMhALTSAEBucQqA">
                             <GoogleMap
@@ -38,23 +46,13 @@ export default class MapSection extends Component {
                                     label={"Sri Lanka Institute of Information Technology"} />
                             </GoogleMap>
                         </LoadScript>
-                    </div>
-                    <div className='col-xs-12 col-md-6'>
-                        <div className='map-text'>
-                            <p>DevLearn will provide you with the answers to today’s toughest
-                            challenges, while also giving you the guidance to navigate the
-                            uncertain times ahead. You’ll find passionate, like-minded
-                            professionals who are leading their organizations’ use of
-                            learning technologies. The comprehensive program includes tools,
-                            technologies, ideas, strategies, and best practices to ensure your
-                            success. Whether you’re new to the field or a seasoned expert,
-                            DevLearn is the place to engage with your professional community
-                            and explore how technology can support learning and development.
-                                        Attendees’ roles include:</p>
-                        </div>
-                    </div>
-                </div>
-                {/* </div> */}
+                    </Col>
+                    <Col style={{ marginRight: 60, }}>
+                        <Card className="bg-light text-dark">
+                            <Card.Img src={sliit} alt="Card image" />
+                        </Card>
+                    </Col>
+                </Row>
             </div>
         )
     }

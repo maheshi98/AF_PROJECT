@@ -35,13 +35,13 @@ public class workshopDController {
     }
 
     // Store New Workshop
-    @PostMapping("/")
+    @PostMapping("/create")
     public Workshop saveWorkshop(@RequestBody Workshop workshop) {
         return workshopService.saveOrUpdateWorkshop(workshop);
     }
 
     // Update Workshop
-    @PutMapping("/")
+    @PutMapping("/update")
     public Workshop updateWorkshop(@RequestBody Workshop workshop) {
         return workshopService.saveOrUpdateWorkshop(workshop);
     }

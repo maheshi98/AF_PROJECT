@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+/*import React, { Component } from 'react'
 import Button from "react-bootstrap/Button";
 import{Form , Card}  from 'react-bootstrap'
 import RegisterUserService from '../../Services/RegisterUserService';
@@ -169,3 +169,4 @@ export default class Register extends Component {
         )
     }
 }
+*/

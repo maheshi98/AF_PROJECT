@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import './Gallery.css';
-import avatar4 from 'url:~/src/Assets/staff.jpg';
+import conference from 'url:~/src/Assets/conference.png';
+import present from 'url:~/src/Assets/present.png';
+import sliit from 'url:~/src/Assets/sliit.png';
+import view from 'url:~/src/Assets/view.png';
+import presenter from 'url:~/src/Assets/presenter.png';
+import library from 'url:~/src/Assets/lib.png';
 
 class Gallery extends Component {
     constructor(props) {
@@ -23,13 +28,13 @@ class Gallery extends Component {
                                     <div className='hover-bg'>
                                         {' '}
                                         <div className='hover-text'>
-                                            <h4>Lorem Ipsum</h4>
+                                            <h4>Sri Lanka Institute of Information Technology</h4>
                                         </div>
                                         <img
-                                            src={avatar4}
+                                            src={sliit}
                                             className='img-responsive'
                                             alt='Project Title'
-                                            style={{ height: 200, width: 200 }}
+                                            style={{ height: 330, width: 400 }}
                                         />{' '}
                                     </div>
                                 </div>
@@ -39,29 +44,13 @@ class Gallery extends Component {
                                     <div className='hover-bg'>
                                         {' '}
                                         <div className='hover-text'>
-                                            <h4>Lorem Ipsum</h4>
+                                            <h4>Conference Day</h4>
                                         </div>
                                         <img
-                                            src={avatar4}
+                                            src={view}
                                             className='img-responsive'
                                             alt='Project Title'
-                                            style={{ height: 200, width: 200 }}
-                                        />{' '}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='col-md-4'>
-                                <div className='portfolio-item'>
-                                    <div className='hover-bg'>
-                                        {' '}
-                                        <div className='hover-text'>
-                                            <h4>Lorem Ipsum</h4>
-                                        </div>
-                                        <img
-                                            src={avatar4}
-                                            className='img-responsive'
-                                            alt='Project Title'
-                                            style={{ height: 200, width: 200 }}
+                                            // style={{ height: 200, width: 200 }}
                                         />{' '}
                                     </div>
                                 </div>
@@ -71,13 +60,13 @@ class Gallery extends Component {
                                     <div className='hover-bg'>
                                         {' '}
                                         <div className='hover-text'>
-                                            <h4>Lorem Ipsum</h4>
+                                            <h4>Conference Presenter</h4>
                                         </div>
                                         <img
-                                            src={avatar4}
+                                            src={presenter}
                                             className='img-responsive'
                                             alt='Project Title'
-                                            style={{ height: 200, width: 200 }}
+                                            // style={{ height: 200, width: 200 }}
                                         />{' '}
                                     </div>
                                 </div>
@@ -87,13 +76,13 @@ class Gallery extends Component {
                                     <div className='hover-bg'>
                                         {' '}
                                         <div className='hover-text'>
-                                            <h4>Lorem Ipsum</h4>
+                                            <h4>Speaker</h4>
                                         </div>
                                         <img
-                                            src={avatar4}
+                                            src={present}
                                             className='img-responsive'
                                             alt='Project Title'
-                                            style={{ height: 200, width: 200 }}
+                                            // style={{ height: 200, width: 200 }}
                                         />{' '}
                                     </div>
                                 </div>
@@ -103,13 +92,13 @@ class Gallery extends Component {
                                     <div className='hover-bg'>
                                         {' '}
                                         <div className='hover-text'>
-                                            <h4>Lorem Ipsum</h4>
+                                            <h4>Conference Day</h4>
                                         </div>
                                         <img
-                                            src={avatar4}
+                                            src={conference}
                                             className='img-responsive'
                                             alt='Project Title'
-                                            style={{ height: 200, width: 200 }}
+                                            style={{ height: 300 }}
                                         />{' '}
                                     </div>
                                 </div>
@@ -119,45 +108,13 @@ class Gallery extends Component {
                                     <div className='hover-bg'>
                                         {' '}
                                         <div className='hover-text'>
-                                            <h4>Lorem Ipsum</h4>
+                                            <h4>Researcher</h4>
                                         </div>
                                         <img
-                                            src={avatar4}
+                                            src={library}
                                             className='img-responsive'
                                             alt='Project Title'
-                                            style={{ height: 200, width: 200 }}
-                                        />{' '}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='col-sm-6 col-md-4 col-lg-4'>
-                                <div className='portfolio-item'>
-                                    <div className='hover-bg'>
-                                        {' '}
-                                        <div className='hover-text'>
-                                            <h4>Lorem Ipsum</h4>
-                                        </div>
-                                        <img
-                                            src={avatar4}
-                                            className='img-responsive'
-                                            alt='Project Title'
-                                            style={{ height: 200, width: 200 }}
-                                        />{' '}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='col-sm-6 col-md-4 col-lg-4'>
-                                <div className='portfolio-item'>
-                                    <div className='hover-bg'>
-                                        {' '}
-                                        <div className='hover-text'>
-                                            <h4>Lorem Ipsum</h4>
-                                        </div>
-                                        <img
-                                            src={avatar4}
-                                            className='img-responsive'
-                                            alt='Project Title'
-                                            style={{ height: 200, width: 200 }}
+                                        // style={{ height: 200, width: 200 }}
                                         />{' '}
                                     </div>
                                 </div>

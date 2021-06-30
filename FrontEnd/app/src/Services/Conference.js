@@ -14,21 +14,17 @@ class ConferenceService {
         return http.post("/conference/create", data);
     }
 
-    // update(id, data) {
-    //     return http.put(`/Requests/${id}`, data);
-    // }
+    approvedConference() {
+        return http.get("/conference/approvedConference");
+    }
 
-    // delete(id) {
-    //     return http.delete(`/Requests/${id}`);
-    // }
+    delete(id) {
+        return http.delete(`/conference/delete/${id}`);
+    }
 
-    // deleteAll() {
-    //     return http.delete(`/Requests`);
-    // }
-
-    // findByTitle(title) {
-    //     return http.get(`/Requests?title=${title}`);
-    // }
+    changeStatusApproved(id, status) {
+        return http.put(`/conference/changeStatus/${status}/${id}`);
+    }
 }
 
 export default new ConferenceService();

@@ -1,7 +1,7 @@
 package com.backend.cms.Service;
 
 import com.backend.cms.Model.ImportantDate;
-import com.backend.cms.Repository.ImportantDateRepo;
+import com.backend.cms.Repository.ImportantDateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +11,10 @@ import java.util.Optional;
 @Service
 public class ImportantDateService {
     @Autowired
-    public final ImportantDateRepo importantDateRepo;
+    public final ImportantDateRepository importantDateRepository;
 
-    public ImportantDateService(ImportantDateRepo importantDateRepo) {
-        this.importantDateRepo = importantDateRepo;
+    public ImportantDateService(ImportantDateRepository importantDateRepository) {
+        this.importantDateRepository = importantDateRepository;
     }
 
     /**
@@ -23,7 +23,7 @@ public class ImportantDateService {
      * @memberof ImportantDateService
      */
     public void addDate(ImportantDate importantDate){
-        importantDateRepo.insert(importantDate);
+        importantDateRepository.insert(importantDate);
     }
 
     /**
@@ -31,7 +31,7 @@ public class ImportantDateService {
      * @memberof ImportantDateService
      */
     public List<ImportantDate> getAllDates(){
-        return importantDateRepo.findAll();
+        return importantDateRepository.findAll();
     }
 
     /**
@@ -40,7 +40,7 @@ public class ImportantDateService {
      * @memberof ImportantDateService
      */
     public Optional<ImportantDate> getDateById(String id){
-        return importantDateRepo.findById(id);
+        return importantDateRepository.findById(id);
     }
 
     /**
@@ -49,6 +49,6 @@ public class ImportantDateService {
      * @memberof ImportantDateService
      */
     public void deleteDate(String id) {
-        importantDateRepo.deleteById(id);
+        importantDateRepository.deleteById(id);
     }
 }

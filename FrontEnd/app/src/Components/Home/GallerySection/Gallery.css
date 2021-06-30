@@ -65,3 +65,6 @@ color: #666;
 .hover-bg:hover .hover-text {
 	opacity: 1;
 }
+.map-text{
+	text-align: center;
+}

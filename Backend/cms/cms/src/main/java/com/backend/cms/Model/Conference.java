@@ -3,6 +3,8 @@ package com.backend.cms.Model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Document(collection = "conference")
 public class Conference {
     @Id
@@ -10,17 +12,20 @@ public class Conference {
     private String confTopic;
     private String confDate;
     private String confDescription;
-    private ConferenceSession conferenceSession;
-    private Boolean approveStatus;
+    private List researchPapers;
+    private List workshops;
+    private String approveStatus;
 
     public Conference() {
     }
 
-    public Conference(String confId, String confTopic, String confDate, String confDescription, Boolean approveStatus) {
+    public Conference(String confId, String confTopic, String confDate, String confDescription, List researchPapers, List workshops, String approveStatus) {
         this.confId = confId;
         this.confTopic = confTopic;
         this.confDate = confDate;
         this.confDescription = confDescription;
+        this.researchPapers = researchPapers;
+        this.workshops = workshops;
         this.approveStatus = approveStatus;
     }
 
@@ -56,19 +61,27 @@ public class Conference {
         this.confDescription = confDescription;
     }
 
-    public ConferenceSession getConferenceSession() {
-        return conferenceSession;
+    public List getResearchPapers() {
+        return researchPapers;
     }
 
-    public void setConferenceSession(ConferenceSession conferenceSession) {
-        this.conferenceSession = conferenceSession;
+    public void setResearchPapers(List researchPapers) {
+        this.researchPapers = researchPapers;
     }
 
-    public Boolean getApproveStatus() {
+    public List getWorkshops() {
+        return workshops;
+    }
+
+    public void setWorkshops(List workshops) {
+        this.workshops = workshops;
+    }
+
+    public String getApproveStatus() {
         return approveStatus;
     }
 
-    public void setApproveStatus(Boolean approveStatus) {
+    public void setApproveStatus(String approveStatus) {
         this.approveStatus = approveStatus;
     }
 }
