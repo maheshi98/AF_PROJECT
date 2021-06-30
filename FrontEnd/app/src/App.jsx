@@ -43,8 +43,6 @@ export default class App extends Component {
                         <Route exact path='/research-paper' component={UploadResearch} />
                         <Route exact path='/contactUs' component={ReviewTable} />
                         <Route exact path='/payment' component={Payment} />
-
-
                     </Switch>
                 </BrowserRouter>
                 <Footer />

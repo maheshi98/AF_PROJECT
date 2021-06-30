@@ -68,6 +68,10 @@ export default class ViewConference extends Component {
 
         return (
             <div className='container'>
+                <div className='section-title'>
+                    <h2>Editor Dashboard</h2>
+                    <p>Create Conference and get Approval from Admin.</p>
+                </div>
                 <div id='viewConference'>
                     <div class="text-right">
                         <Link to='/create-conference'> <Button style={{ marginBottom: 20 }} variant="secondary" >Create Conference</Button></Link>
