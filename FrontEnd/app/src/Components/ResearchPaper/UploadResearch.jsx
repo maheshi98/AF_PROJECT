@@ -77,7 +77,7 @@ export default class UploadResearch extends Component {
                                         type="text"
                                         id="name"
                                         name="name"
-                                        placeholder="Name"
+                                        placeholder="Name" required
                                         value={this.state.name}
                                         onChange={this.handleOnChange} />
                                 </Form.Group>
@@ -88,7 +88,7 @@ export default class UploadResearch extends Component {
                                         type="text"
                                         id="email"
                                         name="email"
-                                        placeholder="Email"
+                                        placeholder="Email" required
                                         value={this.state.email}
                                         onChange={this.handleOnChange} />
                                 </Form.Group>
@@ -98,7 +98,7 @@ export default class UploadResearch extends Component {
                                         type="text"
                                         id="contact_no"
                                         name="contact_no"
-                                        placeholder="Contact number"
+                                        placeholder="Contact number" required
                                         value={this.state.contact_no}
                                         onChange={this.handleOnChange}
                                     />
@@ -109,18 +109,18 @@ export default class UploadResearch extends Component {
                                         type="text"
                                         id="title"
                                         name="title"
-                                        placeholder="Research Topic"
+                                        placeholder="Research Topic" required
                                         value={this.state.title}
                                         onChange={this.handleOnChange}
                                     />
                                 </Form.Group>
                                 <Form.Group >
-                                    <Form.Label>Upload Your pdf</Form.Label>
+                                    <Form.Label>Upload Your pdf Link</Form.Label>
                                     <Form.Control
                                         type="text"
                                         id="pdf"
                                         name="pdf"
-                                        placeholder="pdf"
+                                        placeholder="pdf" required
                                         value={this.state.pdf}
                                         onChange={this.handleOnChange}
                                     />
