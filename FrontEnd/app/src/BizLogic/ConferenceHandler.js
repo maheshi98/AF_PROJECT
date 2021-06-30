@@ -69,32 +69,32 @@ export const getWorkshopsFn = (callback) => {
  * @param {String} id
  * @memberof ConferenceHandler
  */
-// export const deleteConferenceFn = (id) => {
-//     console.log("ConferenceHandler :: deleteConferenceFn", id);
-//     ConferenceService.delete(id)
-//         .then(response => {
-//             alert('Data successfully Deleted.');
-//         })
-//         .catch(error => {
-//             console.log(error.message);
-//             alert(error.message);
-//         })
-// }
+export const deleteConferenceFn = (id) => {
+    console.log("ConferenceHandler :: deleteConferenceFn", id);
+    ConferenceService.delete(id)
+        .then(response => {
+            alert('Data successfully Deleted.');
+        })
+        .catch(error => {
+            console.log(error.message);
+            alert(error.message);
+        })
+}
 
 /**
  * @description This method change status of conference
  * @param {String} id
- * @param {STring} status
+ * @param {String} status
  * @memberof ConferenceHandler
  */
-// export const changeStatusFn = (id, status) => {
-//     console.log("ConferenceHandler :: changeStatusFn", id, status);
-//     ConferenceService.changeStatusApproved(id, status)
-//         .then(response => {
-//             alert('Changed Status.');
-//         })
-//         .catch(error => {
-//             console.log(error.message);
-//             alert(error.message);
-//         })
-// }
+export const changeStatusFn = (id, status) => {
+    console.log("ConferenceHandler :: changeStatusFn", id, status);
+    ConferenceService.changeStatusApproved(id, status)
+        .then(response => {
+            alert('Changed Status.');
+        })
+        .catch(error => {
+            console.log(error.message);
+            alert(error.message);
+        })
+}

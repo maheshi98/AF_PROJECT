@@ -46,6 +46,7 @@ class Workshop extends Component {
                                     <Card>
                                         <Card.Body>
                                             <Card.Title>{workshop.label}</Card.Title>
+                                            <Card.Title>Published By: {workshop.name}</Card.Title>
                                             <Card.Text>
                                                 Download here: {''}
                                                 <a href={workshop.link}>{workshop.link}</a>
