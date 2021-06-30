@@ -37,7 +37,7 @@ class MainSection extends Component {
 
         return (
             <div >
-                <Card className="bg-dark text-white">
+                <Card >
                     <Card.Img src={logo} alt="Card image" className="logo" style={{ height: 700 }} />
                     <Card.ImgOverlay>
                         <Row>

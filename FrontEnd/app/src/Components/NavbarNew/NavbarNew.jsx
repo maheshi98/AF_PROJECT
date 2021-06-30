@@ -48,10 +48,9 @@ export default class Navbarnew extends Component {
                 className="d-inline-block align-top" />
                 </Navbar.Brand>
                 <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px"}}>
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#features">Admin Home </Nav.Link>
-                <Nav.Link href="#pricing"></Nav.Link>
-                <Nav.Link href="#pricing">Contact us</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/adminhome">Admin Home </Nav.Link>
+                <Nav.Link href="/contactUs">Contact us</Nav.Link>
                 </Nav>
 
                 <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , paddingLeft: "25cm"}}>
@@ -82,10 +81,10 @@ export default class Navbarnew extends Component {
                 className="d-inline-block align-top" />
                 </Navbar.Brand>
                 <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , width:"20cm"}}>
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#features">Keynotes</Nav.Link>
-                <Nav.Link href="#pricing">Committee</Nav.Link>
-                <Nav.Link href="#pricing">Contact us</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/keynotes">Keynotes</Nav.Link>
+                <Nav.Link href="/conference">Conference</Nav.Link>
+                <Nav.Link href="/contactUs">Contact us</Nav.Link>
                 </Nav>
 
                 <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , paddingLeft: "25cm"}}>
@@ -112,10 +111,10 @@ export default class Navbarnew extends Component {
                 className="d-inline-block align-top" />
                 </Navbar.Brand>
                 <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , width:"20cm"}}>
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#features">Keynotes</Nav.Link>
-                <Nav.Link href="#pricing">Committee</Nav.Link>
-                <Nav.Link href="#pricing">Contact us</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/keynotes">Keynotes</Nav.Link>
+                <Nav.Link href="#pricing">Editor Dashborad</Nav.Link>
+                <Nav.Link href="/contactUs">Contact us</Nav.Link>
                 </Nav>
     
                 <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , paddingLeft: "25cm"}}>
