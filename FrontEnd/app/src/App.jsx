@@ -21,6 +21,7 @@ import Payment from './Components/Payment/Payment';
 import Userprofile from './Components/Userprofile/UserProfile';
 import Navbarnew from './Components/NavbarNew/NavbarNew';
 import Logout from './Components/Logout/Logout';
+import Adminhome from './Components/AdminHome/AdminHome';
 
 export default class App extends Component {
     constructor(props) {
@@ -51,8 +52,7 @@ export default class App extends Component {
                         <Route exact path='/payment' component={Payment} />
                         <Route exact path='/userprofile' component={Userprofile} />
                         <Route exact path='/logout' component={Logout} />
-
-
+                        <Route exact path='/adminHome' component={Adminhome} />
 
 
                     </Switch>
