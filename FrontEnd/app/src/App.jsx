@@ -55,6 +55,7 @@ export default class App extends Component {
                         <Route exact path='/userprofile' component={Userprofile} />
                         <Route exact path='/logout' component={Logout} />
                         <Route exact path='/adminHome' component={Adminhome} />
+                        <Route exact path='/viewConference' component={ConferenceAdmin} />
                     </Switch>
                 </BrowserRouter>
                 <Footer />

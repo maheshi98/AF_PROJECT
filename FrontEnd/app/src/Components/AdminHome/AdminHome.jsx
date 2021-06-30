@@ -65,7 +65,7 @@ export default class Adminhome extends Component {
                               
                                 <Card.Body>
                                     <Card.Title>Conference Details</Card.Title>
-                                    <Link to='/add-research'><Button variant="primary">View</Button></Link>
+                                    <Link to='/viewConference'><Button variant="primary">View</Button></Link>
                                 </Card.Body>
                                 </Card>
                     </Col>  

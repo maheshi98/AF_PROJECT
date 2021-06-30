@@ -53,7 +53,7 @@ export default class Navbarnew extends Component {
                 <Nav.Link href="/contactUs">Contact us</Nav.Link>
                 </Nav>
 
-                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , paddingLeft: "25cm"}}>
+                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , paddingLeft: "22cm" }}>
                 <Navbar.Brand href="/userprofile">
                 <img 
                 src="https://bootdey.com/img/Content/avatar/avatar7.png" 
@@ -80,14 +80,14 @@ export default class Navbarnew extends Component {
                 height="70"
                 className="d-inline-block align-top" />
                 </Navbar.Brand>
-                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , width:"20cm"}}>
+                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" }}>
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/keynotes">Keynotes</Nav.Link>
                 <Nav.Link href="/conference">Conference</Nav.Link>
                 <Nav.Link href="/contactUs">Contact us</Nav.Link>
                 </Nav>
 
-                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , paddingLeft: "25cm"}}>
+                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , paddingLeft: "22cm"}}>
                 <Navbar.Brand href="/userprofile">
                 <img 
                 src="https://bootdey.com/img/Content/avatar/avatar7.png" 
@@ -110,14 +110,14 @@ export default class Navbarnew extends Component {
                 height="70"
                 className="d-inline-block align-top" />
                 </Navbar.Brand>
-                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , width:"20cm"}}>
+                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" }}>
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/keynotes">Keynotes</Nav.Link>
                 <Nav.Link href="#pricing">Editor Dashborad</Nav.Link>
                 <Nav.Link href="/contactUs">Contact us</Nav.Link>
                 </Nav>
     
-                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , paddingLeft: "25cm"}}>
+                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px", paddingLeft: "22cm" }}>
                 <Navbar.Brand href="/userprofile">
                 <img 
                 src="https://bootdey.com/img/Content/avatar/avatar7.png" 
@@ -141,14 +141,14 @@ export default class Navbarnew extends Component {
                height="70"
                className="d-inline-block align-top" />
                </Navbar.Brand>
-               <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , width:"20cm"}}>
+               <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px"}}>
                <Nav.Link href="/">Home</Nav.Link>
                <Nav.Link href="/keynotes">Keynotes</Nav.Link>
                <Nav.Link href="/review">Reiewer Dashborad</Nav.Link>
                <Nav.Link href="/contactUs">Contact us</Nav.Link>
                </Nav>
    
-               <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , paddingLeft: "25cm"}}>
+               <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px", paddingLeft: "22cm" }}>
                <Navbar.Brand href="/userprofile">
                <img 
                src="https://bootdey.com/img/Content/avatar/avatar7.png" 
@@ -173,7 +173,7 @@ export default class Navbarnew extends Component {
                 height="70"
                 className="d-inline-block align-top" />
                 </Navbar.Brand>
-                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , width:"20cm"}}>
+                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" }}>
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/keynotes">Keynotes</Nav.Link>
                 <Nav.Link href="/conference">Conference</Nav.Link>
@@ -183,13 +183,13 @@ export default class Navbarnew extends Component {
 
                 </Nav>
     
-                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , paddingLeft: "25cm"}}>
-                {/* <Navbar.Brand href="/userprofile">
+                <Nav id = "navbar" className="me-auto" style= {{fontSize:"18px" , paddingLeft: "22cm"}}>
+                <Navbar.Brand href="/userprofile">
                 <img 
                 src="https://bootdey.com/img/Content/avatar/avatar7.png" 
                 alt="Admin" className="rounded-circle" 
                 width={50} />
-                </Navbar.Brand> */}
+                </Navbar.Brand>
                 </Nav>
                 </Navbar.Collapse>
             </Navbar>
