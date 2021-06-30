@@ -13,7 +13,7 @@ class MainSection extends Component {
         return (
             <div className="mainContainer">
                 <div id='about'>
-                    <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
+                    <div style= {{paddingLeft : "3cm" , paddingRight : "3cm"}}>
                         <div className='row'>
                             <div className='col-xs-12 col-md-6'>
                                 <img src={logo} className='img-responsive' alt='' />{' '}

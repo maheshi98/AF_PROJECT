@@ -49,79 +49,80 @@ export default class NavBar extends Component {
 
     render() {
 
-        const pages = [ //TODO: 
-            {
-                link: "/",
-                text: "Home",
-                details: []
-            },
-            {
-                link: "/keynotes",
-                text: "Keynotes",
-                details: []
-            },
-            {
-                link: "/add-workshop",
-                text: "Workshop",
-                details: []
-            },
-            {
-                link: "/workshops",
-                text: "Workshops",
-                details: []
-            },
-            {
-                link: "/conference",
-                text: "Conference",
-                details: []
-            },
-            {
-                link: "/conference-admin", //TODO: remove this //FIXME:
-                text: "Conference Admin",
-                details: []
-            },
-            {
-                link: "/past-proceedings",
-                text: "Past Proceedings",
-                details: []
-            },
-            {
-                link: "/contactUs",
-                text: "Contact us",
-                details: []
-            },
-            {
-                link: "/research-paper",
-                text: "Research Paper",
-                details: []
-            },
-            {
-                link: "/logout",
-                text: "Log Out",
-                details: []
-            },
-            {
-                link: "/adminHome",
-                text: "Admin",
-                details: []
-            }
-        ];
+        // const pages = [ //TODO: 
+        //     {
+        //         link: "/",
+        //         text: "Home",
+        //         details: []
+        //     },
+        //     {
+        //         link: "/keynotes",
+        //         text: "Keynotes",
+        //         details: []
+        //     },
+        //     // {
+        //     //     link: "/add-workshop",
+        //     //     text: "Workshop",
+        //     //     details: [  ]
+        //     // },
+        //     // {
+        //     //     link: "/workshops",
+        //     //     text: "Workshops",
+        //     //     details: [  ]
+        //     // },
+        //     {
+        //         link: "/conference",
+        //         text: "Conference",
+        //         details: []
+        //     },
+        //     {
+        //         link: "/conference-admin", //TODO: remove this //FIXME:
+        //         text: "Conference Admin",
+        //         details: []
+        //     },
+        //     {
+        //         link: "/past-proceedings",
+        //         text: "Past Proceedings",
+        //         details: []
+        //     },
+        //     {
+        //         link: "/committee",
+        //         text: "Committee",
+        //         details: []
+        //     },
+        //     {
+        //         link: "/contactUs",
+        //         text: "Contact us",
+        //         details: []
+        //     },
+        //     {
+        //         link: "/research-paper",
+        //         text: "Research Paper",
+        //         details: []
+        //     },
+        //     {
+        //         link: "/logout",
+        //         text: "Log Out",
+        //         details: []
+        //     },
+        //     {
+        //         link: "/contactUs",
+        //         text: "Contact Us",
+        //         details: []
+        //     }
+        // ];
 
-        const nav_length = pages.length;
+      //  const nav_length = pages.length;
 
         return (
             <Navbar fixed="top" bg="dark" expand="lg" style={{ top: 0, position: 'sticky' }}>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto" style={{ paddingLeft: 150 }}>
-
-
-                        {pages.map((item, index) => {
-                            return (
-                                this.renderNavBar(index, item)
-                                // index == nav_length && isLogged
-                            )
-                        })}
+                    <Nav.Link href="#home">Home</Nav.Link>
+                    <Nav.Link href="#features">Keynotes</Nav.Link>
+                    <Nav.Link href="#pricing"></Nav.Link>
+                    <Nav.Link href="#pricing">Contact us</Nav.Link>
                     </Nav>
                     <Nav id="navbar" className="me-auto" style={{ fontSize: "18px", paddingLeft: "25cm" }}>
                         <Navbar.Brand href="/userprofile">
