@@ -101,7 +101,7 @@ export default class Contact extends Component {
 
     render() {
         return (
-            <div className='container'>
+            <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
                 <div id='createConference'>
                     <div className='section-title text-center'>
                         <h3>Contact Us</h3>

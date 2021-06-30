@@ -9,7 +9,7 @@ export default class Conference extends Component {
         return (
             <div>
                 <PageTitle title="KEY NOTE SPEAKERS" />
-                <div className="container">
+                <div style={{ paddingLeft: "3cm", paddingRight: "3cm" }}>
                     <KeyNoteSpeakers />
                 </div>
             </div>

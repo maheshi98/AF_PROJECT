@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button, Table, Badge } from 'react-bootstrap';
 import { RiDeleteBin5Line } from "react-icons/ri";
 // import { FiEdit } from "react-icons/fi";
-import Select from 'react-select';
-import { getAllConferenceFn, changeStatusFn, deleteConferenceFn } from '../../../BizLogic';
+import { getAllConferenceFn, changeStatusFn, deleteConferenceFn } from '../../BizLogic';
 import './ViewConference.css';
 
 const initialState = {
@@ -67,14 +66,14 @@ export default class ViewConference extends Component {
         ]
 
         return (
-            <div className='container'>
+            <div className='' style={{ margin: 50 }}>
                 <div className='section-title'>
                     <h2>Editor Dashboard</h2>
                     <p>Create Conference and get Approval from Admin.</p>
                 </div>
                 <div id='viewConference'>
                     <div class="text-right">
-                        <Link to='/create-conference'> <Button style={{ marginBottom: 20 }} variant="secondary" >Create Conference</Button></Link>
+                        <Link to='/create-conference'> <Button style={{ marginBottom: 20 }} variant="info" >Create Conference</Button></Link>
                     </div>
                     <br />
                     <Table striped bordered hover>
@@ -88,7 +87,6 @@ export default class ViewConference extends Component {
                                 <th>Status</th>
                                 {/* <th>Edit</th> */}
                                 <th>Delete</th>
-                                <th width={'20%'} >Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -99,15 +97,21 @@ export default class ViewConference extends Component {
                                         <td>{conference.confDate}</td>
                                         <td>{conference.confDescription}</td>
                                         <td>
-                                            <ul>
+                                            <ul style={{marginLeft: 30}}>
                                                 {conference.researchPapers.map((item) => (
                                                     <li>{item.label}</li>
                                                 ))
                                                 }
                                             </ul>
                                         </td>
-                                        {/* TODO: add workshops*/}
-                                        <td>Workshops</td>
+                                        <td>
+                                            <ul style={{ marginLeft: 30 }}>
+                                                {conference.workshops.map((item) => (
+                                                    <li>{item.label}</li>
+                                                ))
+                                                }
+                                            </ul>
+                                        </td>
                                         <td>
                                             <Badge pill variant={
                                                 conference.approveStatus === "Approved" ? "success" :
@@ -127,12 +131,6 @@ export default class ViewConference extends Component {
                                                     size={30}
                                                     style={{ textAlign: "center", color: "red" }} />
                                             </button></td>
-                                        <td>
-                                            <Select
-                                                options={actions}
-                                                onChange={e => this.changeStatus(e, conference.confId)}
-                                            />
-                                        </td>
                                     </tr>
                             )}
                         </tbody>
